@@ -1,5 +1,9 @@
-import styles from './Box.module.css'
+import styles from "./Box.module.css";
 
-export default function Box({ children }) {
-  return <div className={styles.box}>{children}</div>
+type props = {
+  children: JSX.Element;
+};
+
+export default function Box({ children }: props) {
+  return <div className={styles.box}>{children}</div>;
 }

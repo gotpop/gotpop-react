@@ -11,7 +11,11 @@ const icons = new Map([
   [3, GoZap]
 ])
 
-const Footer = ({ vars }) => {
+type props = {
+  vars: object;
+}
+
+const Footer = ({ vars }: props) => {
   return (
     <footer className={styles.footer} style={vars}>
       <Nav navItems={navSecondary} iconsMap={icons} />

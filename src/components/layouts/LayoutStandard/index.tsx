@@ -1,5 +1,3 @@
-// import Breadcrumbs from '@ui/BreadCrumbs'
-
 import Footer from '@blocks/Footer'
 import Header from '@blocks/Header'
 import { getScrollBarWidth } from '@utilities/scrollBarWidth'
@@ -7,16 +5,11 @@ import styles from './Site.module.css'
 import stylesMain from './Main.module.css'
 import { useEffect } from 'react'
 
-// import Trigger from '@ui/Trigger'
+type props = {
+  children: JSX.Element;
+}
 
-
-
-
-// import { useRouter } from 'next/router'
-
-export default function LayoutStandard({ children }) {
-  // const { pathname } = useRouter()
-
+export default function LayoutStandard({ children }: props) {
   useEffect(() => {
     getScrollBarWidth()
   }, [])
@@ -25,9 +18,7 @@ export default function LayoutStandard({ children }) {
     <div className={styles.site}>
       <Header />
       <div className={stylesMain.mainwrap}>
-        {/* <Trigger /> */}
         <main className={stylesMain.main}>
-          {/* {pathname === '/' ? null : <Breadcrumbs />} */}
           {children}
         </main>
       </div>
