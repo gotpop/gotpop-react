@@ -1,0 +1,41 @@
+{
+  "name": "gotpop-react",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.prod.json && vite build",
+    "build:nc": "vite build",
+    "preview": "vite preview",
+    "test": "NODE_ENV=test jest"
+  },
+  "dependencies": {
+    "camelcase": "^6.3.0",
+    "postcss": "^8.4.19",
+    "postcss-custom-media": "^9.0.0",
+    "postcss-import": "^15.0.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-nesting": "^10.2.0",
+    "postcss-preset-env": "^7.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.6.0",
+    "react-router-dom": "^6.4.3",
+    "vite-tsconfig-paths": "^3.5.2"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.154",
+    "@swc/jest": "^0.2.20",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^2.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-watch-typeahead": "^1.0.0",
+    "typescript": "^4.5.4",
+    "vite": "^3.1.4"
+  }
+}

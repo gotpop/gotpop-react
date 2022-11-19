@@ -1,0 +1,21 @@
+.panel {
+  --local-direction: initial;
+  --local-bg-colour: var(--hwb-grey-1);
+
+  display: grid;
+  background-color: var(--local-bg-colour);
+  grid-template-columns: repeat(12, 1fr);
+  direction: var(--local-direction);
+}
+
+.image {
+  --local-grid-column: 1/13;
+
+  height: auto;
+  max-width: 100%;
+  grid-column: var(--local-grid-column);
+
+  @media (--laptop) {
+    --local-grid-column: 7/13;
+  }
+}

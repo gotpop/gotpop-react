@@ -1,0 +1,52 @@
+.icons {
+  --local-link-padding: calc(var(--padding) / 2);
+  --local-display: none;
+
+  display: flex;
+  gap: calc(var(--padding) / 2);
+
+  @media (--laptop) {
+    flex-direction: column;
+  }
+
+  @media (--laptop) {
+    flex: 1 1 40%;
+    align-self: baseline;
+  }
+
+  & .link {
+    align-items: center;
+    border-color: color-contrast(var(--local-bg) vs var(--black), var(--white));
+    border-radius: var(--radius);
+    border: 1px solid;
+    display: flex;
+    flex-basis: 100%;
+    padding: var(--local-link-padding);
+    place-content: center;
+    transition: background-color var(--timing) ease;
+
+    &:hover {
+      background-color: var(--accent);
+    }
+
+    @media (width > 600px) {
+      --local-link-padding: var(--padding);
+
+      justify-content: space-between;
+      gap: var(--padding);
+    }
+
+    @media (--laptop) {
+      --local-link-padding: calc(var(--padding) / 2);
+    }
+
+    & .text {
+      display: var(--local-display);
+      font-weight: 600;
+
+      @media (width > 600px) {
+        --local-display: flex;
+      }
+    }
+  }
+}

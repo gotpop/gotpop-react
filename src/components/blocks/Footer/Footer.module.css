@@ -1,0 +1,24 @@
+.footer {
+  --local-bg: var(--hwb-grape-4);
+  --local-mt: calc(var(--padding) * 3);
+  --local-radius: var(--radius-lg) var(--radius-lg) 0 0;
+
+  grid-area: foot;
+  background: var(--local-bg);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--padding) * 3);
+  place-content: center;
+  font-size: 0.8rem;
+  margin-top: var(--local-mt);
+  gap: 3rem;
+
+  @media (width > 600px) {
+    border-radius: var(--local-radius);
+  }
+
+  & span {
+    align-self: center;
+  }
+}

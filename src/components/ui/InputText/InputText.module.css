@@ -1,0 +1,33 @@
+.input {
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 600px;
+
+  & label {
+    margin-bottom: 0.5rem;
+  }
+
+  & input {
+    border-radius: var(--radius);
+    padding: 0.9rem;
+    border: 1px solid var(--hwb-grey-2);
+
+    &:valid {
+      accent-color: var(--success);
+    }
+
+    &:invalid {
+      accent-color: var(--error);
+    }
+  }
+
+  & .message {
+    color: var(--error);
+    position: absolute;
+    font-size: var(--size-s-1);
+    bottom: 0.2em;
+  }
+}

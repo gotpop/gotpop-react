@@ -1,0 +1,60 @@
+.hero {
+  --local-direction: initial;
+  --local-image: url("/images/keyboard.png");
+  --local-display: none;
+
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--local-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (width > 600px) {
+    --local-image: none;
+  }
+}
+
+.content {
+  --local-padding: var(--padding);
+
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color: hwb(0 100% 0% / 0.8);
+  border-radius: var(--radius-lg);
+  color: var(--hwb-grape-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding);
+  padding: var(--local-padding);
+  text-align: center;
+  z-index: 999;
+  margin: var(--local-padding);
+
+  @media (width > 600px) {
+    --local-padding: calc(var(--padding) * 2);
+  }
+
+  & h3 {
+    margin: 0;
+    font-weight: 900;
+  }
+  & p {
+    margin: 0;
+  }
+}
+
+.image {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  object-fit: cover;
+  top: 0;
+  display: var(--local-display);
+
+  @media (width > 600px) {
+    --local-display: block;
+  }
+}
