@@ -2,7 +2,18 @@ import Icons from './Icons'
 import LinkIcon from '@ui/LinkIcon'
 import styles from './Card.module.css'
 
-const Card = ({ content, fullCard, childPath }) => {
+type Card = {
+  content: {
+    id: string;
+    title: string;
+    text: string;
+    links: string[];
+  };
+  fullCard: boolean;
+  childPath: string;
+}
+
+const Card = ({ content, fullCard, childPath }: Card) => {
   const { id, title, text, links } = content
 
   return (
