@@ -1,0 +1,11 @@
+.grid {
+  /* --local-bg: var(--hwb-grey-2); */
+
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: repeat(12, 1fr);
+
+  & > * {
+    grid-column: span 6;
+  }
+}
