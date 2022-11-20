@@ -18,6 +18,7 @@
     "baseUrl": "./src",
     "paths": {
       "@blocks/*": ["./components/blocks/*"],
+      "@pages/*": ["./pages/*"],
       "@components/*": ["./components/*"],
       "@config": ["../config/index"],
       "@context/*": ["./context/*"],

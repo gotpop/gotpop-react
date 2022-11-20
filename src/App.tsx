@@ -2,14 +2,12 @@ import "./styles/app.css";
 
 import { Route, Routes } from "react-router-dom";
 
-import { About } from "pages/About";
-import { Home } from "pages/Home";
+import { About } from "@pages/About";
+import { Home } from "@pages/Home";
 import LayoutStandard from "@layouts/LayoutStandard"
-import { Store } from "pages/Shop";
-import { useState } from "react";
+import { Store } from "@pages/Shop";
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <LayoutStandard>
        <Routes>
