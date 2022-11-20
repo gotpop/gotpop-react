@@ -12,11 +12,11 @@ const icons = new Map([
   [3, AiOutlineHome]
 ])
 
-type props = {
+type Props = {
   vars: object;
 }
 
-const Header = ({ vars }: props) => {
+const Header = ({ vars }: Props) => {
   return (
     <header className={styles.header} style={vars}>
       <section className={styles.grid}>
