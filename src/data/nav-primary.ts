@@ -15,9 +15,9 @@ export const navPrimary = [
     },
     {
         id: '2',
-        text: 'Store',
-        test: 'store',
-        href: '/store',
+        text: 'Shop',
+        test: 'shop',
+        href: '/shop',
         internal: true
     },
     {
