@@ -3,11 +3,11 @@ import { SiCsswizardry, SiMozilla } from "react-icons/si";
 import { AiFillChrome } from "react-icons/ai";
 import { DiCssTricks } from "react-icons/di";
 import { FaEdge } from "react-icons/fa";
+import GetComponent from "@utilities/getComponent";
 import { TfiGithub } from "react-icons/tfi";
-import { getComponent } from "@utilities/getComponent";
 import stylesIcon from "./Icons.module.css";
 
-const icons = new Map([
+const iconsMap = new Map([
   [1, TfiGithub],
   [2, SiCsswizardry],
   [3, DiCssTricks],
@@ -32,7 +32,7 @@ const Icons = ({ links }: Props) => (
       <a key={link.name} href={link.href} className={stylesIcon.link}>
         <>
           <span className={stylesIcon.text}>{link.name}</span>
-          {getComponent(icons, link.id)}
+          <GetComponent componentsMap={iconsMap} id={link.id} />
         </>
       </a>
     ))}
