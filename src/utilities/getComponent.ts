@@ -1,7 +1,13 @@
-import { IconType } from "react-icons"
+type Props = {
+    componentsMap: Map<number, any>;
+    id: string;
+};
 
-export const getComponent = (iconsMap: Map<number, IconType>, id: string) => {
-    const icon = (id: string) => iconsMap.get(parseInt(id))
+const GetComponent = ({ componentsMap, id }: Props) => {
+    const gotComponent = (id: string) => componentsMap.get(parseInt(id))
+    const resolvedComponent = gotComponent(id)
 
-    return icon ? icon(id) : null
+    return resolvedComponent()
 }
+
+export default GetComponent

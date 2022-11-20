@@ -1,6 +1,6 @@
+import GetComponent from "@utilities/getComponent";
 import { IconType } from "react-icons";
 import { Link } from "react-router-dom";
-import { getComponent } from "@utilities/getComponent";
 import styles from "./Nav.module.css";
 
 type NavItem = {
@@ -22,7 +22,7 @@ export default function Nav({ navItems, iconsMap }: Props) {
         <Link key={item.id} to={item.href} data-test={item.test}>
           <>
             <span>{item.text}</span>
-            {getComponent(iconsMap, item.id)}
+            <GetComponent componentsMap={iconsMap} id={item.id} />
           </>
         </Link>
       ))}
