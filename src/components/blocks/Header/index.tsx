@@ -1,4 +1,4 @@
-import { AiOutlineForm, AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineForm, AiOutlineHome, AiOutlineShoppingCart } from 'react-icons/ai'
 
 import { CgCardSpades } from 'react-icons/cg'
 import Logo from '@ui/Logo'
@@ -9,7 +9,8 @@ import styles from './Header.module.css'
 const icons = new Map([
   [1, CgCardSpades],
   [2, AiOutlineForm],
-  [3, AiOutlineHome]
+  [3, AiOutlineHome],
+  [4, AiOutlineShoppingCart]
 ])
 
 type Props = {
