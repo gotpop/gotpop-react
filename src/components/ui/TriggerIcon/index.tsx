@@ -4,21 +4,20 @@ import styles from "./TriggerIcon.module.css";
 import stylesSpan from "./Span.module.css";
 
 type MenuObject = {
-  open: boolean;
+  open?: boolean;
 };
 
 type Props = {
-  menuState: MenuObject;
+  menuState: MenuObject | null;
 };
 
 export default function TriggerIcon({ menuState }: Props) {
   const trigger = useRef<HTMLSpanElement | null>(null);
   const triggerRef = trigger.current;
-  const { open } = menuState;
 
   useEffect(() => {
-    open ? triggerRef?.setAttribute("open", "true") : triggerRef?.setAttribute("open", "false");
-  }, [menuState, open]);
+    menuState?.open ? triggerRef?.setAttribute("open", "true") : triggerRef?.setAttribute("open", "false");
+  }, [menuState?.open]);
 
   return (
     <span className={styles.icon} ref={trigger}>
