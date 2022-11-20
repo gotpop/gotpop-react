@@ -13,12 +13,10 @@ const Dialog = ({ children, handleClose }: Dialog) => {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const dialog = dialogRef.current;
 
-  useEffect(() => {
-    if (dialog === null) return;
-    
-    dialog.showModal();
+  useEffect(() => {    
+    dialog?.showModal();
 
-    return () => dialog.close();
+    return () => dialog?.close();
   }, []);
 
   return (
