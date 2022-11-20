@@ -1,15 +1,22 @@
 import "./styles/app.css";
 
-import LayoutStandard from "./components/layouts/LayoutStandard"
+import { Route, Routes } from "react-router-dom";
+
+import { About } from "pages/About";
+import { Home } from "pages/Home";
+import LayoutStandard from "@layouts/LayoutStandard"
+import { Store } from "pages/Store";
 import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <LayoutStandard>
-      <div className="App">
-        <h1>Hi</h1>
-      </div>
+       <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
     </LayoutStandard>
   );
 }
