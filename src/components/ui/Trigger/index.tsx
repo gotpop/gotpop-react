@@ -1,35 +1,36 @@
-import ColumnContext from '@context/MenuContext'
-import TriggerIcon from '@ui/TriggerIcon'
-import { set } from '@utils/setPropsOnRoot'
-import styles from './Trigger.module.css'
-import { useContext } from 'react'
+import MenuContext from "@context/MenuContext";
+import TriggerIcon from "@ui/TriggerIcon";
+import { set } from "@utilities/setPropsOnRoot";
+import styles from "./Trigger.module.css";
+import { useContext } from "react";
 
-const Trigger = ({ vars }) => {
-  const { menu, setMenu } = useContext(ColumnContext)
+type Props = {
+  vars: object;
+};
+
+const Trigger = ({ vars }: Props) => {
+  const { menu, setMenu } = useContext(MenuContext);
 
   const handleClick = () => {
-    setMenu(prevState => {
-      const newState = !prevState.open
+    setMenu((prevState: { open: boolean }) => {
+      const newState = !prevState.open;
 
-      newState
-        ? set('--menu-state', 'var(--menu-open)')
-        : set('--menu-state', 'var(--menu-closed)')
+      newState ? set("--menu-state", "var(--menu-open)") : set("--menu-state", "var(--menu-closed)");
 
-      return { open: newState }
-    })
-  }
+      return { open: newState };
+    });
+  };
 
   return (
     <button onClick={handleClick} className={styles.trigger} style={vars}>
       <TriggerIcon menuState={menu} />
-      {!menu.open && <span>Open menu</span>}
-      {menu.open && <span>Close menu</span>}
+      {menu?.open ? <span>Close menu</span> : <span>Open menu</span>}
     </button>
-  )
-}
+  );
+};
 
 Trigger.defaultProps = {
-  vars: null
-}
+  vars: null,
+};
 
-export default Trigger
+export default Trigger;
