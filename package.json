@@ -2,6 +2,9 @@
   "name": "gotpop-react",
   "private": true,
   "version": "0.0.0",
+  "engines": {
+    "node": ">v18.12.1"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.prod.json && vite build",
