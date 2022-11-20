@@ -1,11 +1,7 @@
-export const getComponent = (iconsMap, id) => {
-    const icon = iconsMap.get(parseInt(id))
+import { IconType } from "react-icons"
 
-    return icon ? icon() : null
-}
+export const getComponent = (iconsMap: Map<number, IconType>, id: string) => {
+    const icon = (id: string) => iconsMap.get(parseInt(id))
 
-export const getImage = (imagesMap, id) => {
-    const image = imagesMap.get(parseInt(id))
-
-    return image ? image : null
+    return icon ? icon(id) : null
 }
