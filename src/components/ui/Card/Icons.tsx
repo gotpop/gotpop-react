@@ -4,7 +4,7 @@ import { AiFillChrome } from 'react-icons/ai'
 import { DiCssTricks } from 'react-icons/di'
 import { FaEdge } from 'react-icons/fa'
 import { TfiGithub } from 'react-icons/tfi'
-import { getComponent } from '@utils/getComponent'
+import { getComponent } from '@utilities/getComponent'
 import stylesIcon from './Icons.module.css'
 
 const icons = new Map([
@@ -16,7 +16,17 @@ const icons = new Map([
   [6, SiMozilla]
 ])
 
-const Icons = ({ links }) => (
+type Link = {
+  name: string;
+  href: string;
+  id: string;
+}
+
+type Props = {
+  links: Link[];
+}
+
+const Icons = ({ links }: Props) => (
   <aside className={stylesIcon.icons}>
     {links.map(link => (
       <a key={link.name} href={link.href} className={stylesIcon.link}>

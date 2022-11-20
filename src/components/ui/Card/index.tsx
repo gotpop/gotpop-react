@@ -2,12 +2,18 @@ import Icons from './Icons'
 import LinkIcon from '@ui/LinkIcon'
 import styles from './Card.module.css'
 
+type Link = {
+  name: string;
+  href: string;
+  id: string;
+}
+
 type Card = {
   content: {
     id: string;
     title: string;
     text: string;
-    links: string[];
+    links: Link[];
   };
   fullCard: boolean;
   childPath: string;
