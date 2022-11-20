@@ -1,10 +1,21 @@
-import Image from 'next/image'
-import LinkInternal from '@ui/LinkInternal'
-import keyboardPic from '@images/hero/keyboard.png'
-import styles from './Hero.module.css'
+import LinkInternal from "@ui/LinkInternal";
+import keyboardPic from "@images/hero/keyboard.png";
+import styles from "./Hero.module.css";
 
-const Hero = ({ image, page }) => {
-  const { link, excerpt, title } = page
+type Hero = {
+  image: string;
+  page: {
+    title: string;
+    excerpt: string;
+    link: {
+      href: string;
+      text: string;
+    };
+  };
+};
+
+const Hero = ({ image, page }: Hero) => {
+  const { link, excerpt, title } = page;
 
   return (
     <section className={styles.hero}>
@@ -13,26 +24,21 @@ const Hero = ({ image, page }) => {
         <p>{excerpt}</p>
         <LinkInternal href={link.href}>Find out more</LinkInternal>
       </div>
-      <Image
-        className={styles.image}
-        src={image}
-        alt="Picture of the author"
-        placeholder="blur"
-      />
+      <img className={styles.image} src={image} alt="Picture of the author" />
     </section>
-  )
-}
+  );
+};
 
 Hero.defaultProps = {
   image: keyboardPic,
   page: {
-    title: 'GotPop Starter',
-    excerpt: 'A Next.js starter template using Next.js 13',
+    title: "GotPop Starter",
+    excerpt: "A Next.js starter template using Next.js 13",
     link: {
-      text: 'Find out more!',
-      href: '#panel-1'
-    }
-  }
-}
+      text: "Find out more!",
+      href: "#panel-1",
+    },
+  },
+};
 
-export default Hero
+export default Hero;

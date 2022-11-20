@@ -2,7 +2,7 @@ import { IButtonIcon } from '@types'
 import styles from './ButtonIcon.module.css'
 
 const ButtonIcon = ({ content, doClick, icon, vars, ...rest }: IButtonIcon) => {
-  const Icon = icon
+  const ButtonIcon = icon
 
   return (
     <button
@@ -13,7 +13,7 @@ const ButtonIcon = ({ content, doClick, icon, vars, ...rest }: IButtonIcon) => {
       {...rest}
     >
       <span>{content}</span>
-      <Icon />
+      {ButtonIcon}
     </button>
   )
 }
