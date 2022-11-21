@@ -1,4 +1,5 @@
 import LinkInternal from "@ui/LinkInternal";
+import { formatCurrency } from "@utilities/formatCurrency";
 import keyboardPic from "../../../../public/images/keyboard.png";
 import styles from "./Product.module.css";
 
@@ -25,7 +26,7 @@ const Product = ({ product }: Props) => {
       <img className={styles.image} src={url} alt="Picture of the author" />
       <div className={styles.content}>
         <h3>{name}</h3>
-        <p>{price}</p>
+        <p>{formatCurrency(price)}</p>
         <LinkInternal href={'/'}>Buy now</LinkInternal>
       </div>
     </section>
