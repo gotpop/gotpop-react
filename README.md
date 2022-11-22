@@ -1,6 +1,7 @@
-# Jest With Vite
+# GotPop React
 
-This repository contains code for these blog posts:
+Jest With Vite
 
-- [Setup Jest with Vite (featuring SWC) - part 1](https://hung.dev/jest-vite)
-- Setup Jest with Vite (featuring SWC) - part 2 - Coming soon
+## Upgrade utility
+
+https://www.npmjs.com/package/npm-check
