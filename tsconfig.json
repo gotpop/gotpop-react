@@ -19,6 +19,7 @@
     "paths": {
       "@blocks/*": ["./components/blocks/*"],
       "@pages/*": ["./pages/*"],
+      "@hooks/*": ["./hooks/*"],
       "@components/*": ["./components/*"],
       "@config": ["../config/index"],
       "@context/*": ["./context/*"],
