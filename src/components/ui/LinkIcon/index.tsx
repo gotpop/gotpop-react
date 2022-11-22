@@ -1,6 +1,15 @@
-import { ILinkIcon } from '@types'
 import { Link } from "react-router-dom";
+import { ReactElement } from "react";
 import styles from './LinkIcon.module.css'
+
+type ILinkIcon = {
+  text?: string;
+  children?: string;
+  vars?: object;
+  properties?: { local: string; global: string }[];
+  icon?: ReactElement<any, any>;
+  href: string;
+}
 
 const LinkIcon = ({ icon, children, href, vars }: ILinkIcon) => {
   return (

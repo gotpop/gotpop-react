@@ -1,4 +1,4 @@
-import { ChangeEventHandler, MouseEventHandler } from "react";
+import { ChangeEventHandler, MouseEventHandler, ReactElement } from "react";
 
 import { IconType } from "react-icons";
 
@@ -14,15 +14,6 @@ export interface IButtonIcon {
 export interface ILinkInternal {
     vars?: object;
     children?: string;
-    properties?: { local: string; global: string }[];
-    icon?: IconType;
-    href: string;
-}
-
-export interface ILinkIcon {
-    text?: string;
-    children?: string;
-    vars?: object;
     properties?: { local: string; global: string }[];
     icon?: IconType;
     href: string;
