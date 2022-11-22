@@ -1,12 +1,10 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import ButtonIcon from '../ButtonIcon'
 import { CSSProperties } from 'react'
-import { MouseEvent } from 'react'
 import { formatCurrency } from '@utilities/formatCurrency'
 import styles from './Product.module.css'
 import { useShoppingCart } from '@context/ShoppingCartContext'
 
-// import keyboardPic from "@images/images/keyboard.png";
 type Item = {
   name: string
   id: number
