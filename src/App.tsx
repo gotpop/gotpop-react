@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { About } from "@pages/About";
 import { Home } from "@pages/Home";
 import LayoutStandard from "@layouts/LayoutStandard";
+import { Page404 } from "@pages/404";
 import { Shop } from "@pages/Shop";
 import { ShoppingCartProvider } from "@context/ShoppingCartContext";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
+          <Route element={<Page404 />} />
         </Routes>
       </LayoutStandard>
     </ShoppingCartProvider>
