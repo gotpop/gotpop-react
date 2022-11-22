@@ -1,47 +1,78 @@
-import LinkInternal from "@ui/LinkInternal";
-import { formatCurrency } from "@utilities/formatCurrency";
-import keyboardPic from "../../../../public/images/keyboard.png";
-import styles from "./Product.module.css";
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import ButtonIcon from '../ButtonIcon'
+import { CSSProperties } from 'react'
+import { MouseEvent } from 'react'
+import { formatCurrency } from '@utilities/formatCurrency'
+import styles from './Product.module.css'
+import { useShoppingCart } from '@context/ShoppingCartContext'
 
 // import keyboardPic from "@images/images/keyboard.png";
-
-
-
 type Item = {
-  name: string;
-  id: number;
-  url: string;
-  price: number;
-};
+  name: string
+  id: number
+  url: string
+  price: number
+}
 
 type Props = {
-  product: Item;
-};
+  product: Item
+}
+
+const buttonRemoveVars = {
+  ['--local-bg-colour']: 'var(--error)',
+  ['--local-font-size']: 'var(--size-s-1)'
+} as CSSProperties
 
 const Product = ({ product }: Props) => {
-  const { name, url, price } = product;
+  const { name, url, price, id } = product
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart
+  } = useShoppingCart()
+  const quantity = getItemQuantity(id)
 
   return (
     <section className={styles.product}>
-      <img className={styles.image} src={url} alt="Picture of the author" />
+      <img className={styles.image} src={url} alt="Product" />
       <div className={styles.content}>
-        <h3>{name}</h3>
-        <p>{formatCurrency(price)}</p>
-        <LinkInternal href={'/'}>Buy now</LinkInternal>
+        <section className={styles.intro}>
+          <h3>{name}</h3>
+          <p>{formatCurrency(price)}</p>
+        </section>
+        {quantity === 0 ? (
+          <ButtonIcon
+            handleClick={() => increaseCartQuantity(id)}
+            text="Add to cart"
+            icon={<AiOutlineShoppingCart />}
+          />
+        ) : (
+          <div className={styles.controls}>
+            {quantity}
+            <ButtonIcon text="-" handleClick={() => decreaseCartQuantity(id)} />
+            <ButtonIcon
+              text="Remove"
+              vars={buttonRemoveVars}
+              handleClick={() => removeFromCart(id)}
+            />
+            <ButtonIcon text="+" handleClick={() => increaseCartQuantity(id)} />
+          </div>
+        )}
       </div>
     </section>
-  );
-};
+  )
+}
 
 Product.defaultProps = {
   product: {
-    title: "GotPop Starter",
-    description: "A Next.js starter template using Next.js 13",
+    title: 'GotPop Starter',
+    description: 'A Next.js starter template using Next.js 13',
     link: {
-      text: "Find out more!",
-      href: "#panel-1",
-    },
-  },
-};
+      text: 'Find out more!',
+      href: '#panel-1'
+    }
+  }
+}
 
-export default Product;
+export default Product

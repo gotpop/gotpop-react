@@ -1,11 +1,15 @@
 .grid {
-  /* --local-bg: var(--hwb-grey-2); */
+  --local-grid-column: span 12;
 
   display: grid;
   gap: var(--spacing-lg);
   grid-template-columns: repeat(12, 1fr);
 
   & > * {
-    grid-column: span 6;
+    grid-column: var(--local-grid-column);
+
+    @media (width > 600px) {
+      --local-grid-column: span 6;
+    }
   }
 }

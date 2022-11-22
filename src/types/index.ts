@@ -6,7 +6,7 @@ export interface IButtonIcon {
     content: string;
     properties?: { local: string; global: string }[];
     icon?: IconType;
-    doClick?: MouseEventHandler<HTMLButtonElement>;
+    handleClick?: MouseEventHandler<HTMLButtonElement>;
     vars?: object;
     disabled?: boolean;
 }

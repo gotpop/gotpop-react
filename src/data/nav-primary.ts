@@ -1,12 +1,5 @@
 export const navPrimary = [
     {
-        id: '3',
-        text: 'Home',
-        test: 'home',
-        href: '/',
-        internal: true
-    },
-    {
         id: '1',
         text: 'About',
         test: 'about',
@@ -18,13 +11,6 @@ export const navPrimary = [
         text: 'Shop',
         test: 'shop',
         href: '/shop',
-        internal: true
-    },
-    {
-        id: '4',
-        text: 'Cart',
-        test: 'cart',
-        href: '/cart',
         internal: true
     },
 ]

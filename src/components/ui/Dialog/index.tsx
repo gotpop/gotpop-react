@@ -1,38 +1,43 @@
-import { MouseEventHandler, useEffect, useRef } from "react";
+import { CSSProperties, MouseEventHandler, useEffect, useRef } from 'react'
 
-import ButtonIcon from "@ui/ButtonIcon";
-import { ImCross } from "react-icons/im";
-import styles from "./Dialog.module.css";
+import ButtonIcon from '@ui/ButtonIcon'
+import { ImCross } from 'react-icons/im'
+import styles from './Dialog.module.css'
 
 type Dialog = {
-  children: JSX.Element;
-  handleClose: MouseEventHandler<HTMLButtonElement>;
-};
+  children: JSX.Element
+  handleClose: MouseEventHandler<HTMLButtonElement>
+}
 
 const Dialog = ({ children, handleClose }: Dialog) => {
   const dialogRef = useRef<HTMLDialogElement>(null)
-  const dialog = dialogRef.current;
+  const dialog = dialogRef.current
 
-  useEffect(() => {    
-    dialog?.showModal();
+  useEffect(() => {
+    dialog?.showModal()
 
-    return () => dialog?.close();
-  }, []);
+    return () => dialog?.close()
+  }, [])
 
   return (
     <dialog ref={dialogRef} className={styles.dialog}>
       <div className={styles.inner}>
         {children}
         <form method="dialog" className={styles.buttons}>
-          <ButtonIcon content={"Close"} doClick={handleClose} icon={ImCross} vars={{ ["--icon-colour"]: "var(--error)" }} />
+          <ButtonIcon
+            text="Close"
+            handleClick={handleClose}
+            icon={<ImCross />}
+            vars={{ ['--icon-colour']: 'var(--error)' } as CSSProperties}
+          />
         </form>
       </div>
     </dialog>
-  );
-};
+  )
+}
 
 Dialog.defaultProps = {
-  handleClose: null,
-};
+  handleClose: null
+}
 
-export default Dialog;
+export default Dialog
