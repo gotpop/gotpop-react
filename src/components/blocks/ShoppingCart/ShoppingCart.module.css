@@ -1,22 +1,4 @@
 .cart {
   --local-bg-colour: var(--hwb-grey-1);
-  --local-radius: var(--radius-lg) 0 0 var(--radius-lg);
-  --local-translate: var(--drawer-state);
-  --local-width: var(--drawer-width);
 
-  --local-drawer-width: 40vw;
-  --local-drawer-open: 0vw;
-  --local-drawer-closed: var(--local-drawer-width);
-  --local-drawer-state: var(--local-drawer-closed);
-
-  background-color: var(--local-bg-colour);
-  border-radius: var(--local-radius);
-  min-height: 100vh;
-  padding: var(--spacing-lg);
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: translate var(--timing) ease;
-  translate: var(--local-drawer-state);
-  width: var(--local-drawer-width);
 }

@@ -1,5 +1,8 @@
 import { AiFillHome } from 'react-icons/ai'
+import { CSSProperties } from 'react'
 import { GoZap } from 'react-icons/go'
+import Grid from '@components/ui/Grid'
+import GridWrap from '@components/ui/GridWrap'
 import Nav from '@ui/Nav'
 import { TfiGithub } from 'react-icons/tfi'
 import { navSecondary } from 'data/nav-secondary'
@@ -12,20 +15,28 @@ const icons = new Map([
 ])
 
 type props = {
-  vars: object;
+  vars: CSSProperties
 }
 
 const Footer = ({ vars }: props) => {
   return (
-    <footer className={styles.footer} style={vars}>
-      <Nav navItems={navSecondary} iconsMap={icons} />
-      <span>Copyright © {new Date().getFullYear()}. All rights reserved.</span>
+    <footer className={styles.footer} style={{ gridArea: 'foot' }}>
+      <GridWrap>
+        <Grid>
+          <>
+            <Nav navItems={navSecondary} iconsMap={icons} />
+            <span>
+              Copyright © {new Date().getFullYear()}. All rights reserved.
+            </span>
+          </>
+        </Grid>
+      </GridWrap>
     </footer>
   )
 }
 
 Footer.defaultProps = {
-  vars: {}
+  vars: null
 }
 
 export default Footer

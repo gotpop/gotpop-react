@@ -1,0 +1,13 @@
+.grid {
+  --local-grid-column: span 12;
+
+  display: contents;
+
+  & > * {
+    grid-column: var(--local-grid-column);
+
+    @media (width > 600px) {
+      --local-grid-column: span 6;
+    }
+  }
+}

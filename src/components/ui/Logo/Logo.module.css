@@ -1,16 +1,12 @@
 .logo {
   --local-margin: 0 0 var(--text-mb) 0;
-  --local-grid-column: 2/4;
+  --local-grid-column: 1 / 4;
   --local-gap: 0.5rem;
 
   display: flex;
 
   @media (width > 600px) {
     grid-column: var(--local-grid-column);
-  }
-
-  @media (--desktop) {
-    --local-grid-column: 1/5;
   }
 
   & h1 {

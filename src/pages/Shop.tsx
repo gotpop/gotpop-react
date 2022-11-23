@@ -1,26 +1,31 @@
-import Grid from "@components/ui/Grid";
-import Product from "@components/ui/Product";
-import { shopItems } from "../data/shop";
+import GridAuto from '@components/ui/GridAuto'
+import Intro from '@components/ui/Intro'
+import Product from '@components/ui/Product'
+import { shopItems } from '../data/shop'
 
 type Item = {
-  name: string;
-  id: number;
-  url: string;
-  price: number;
-};
+  name: string
+  id: number
+  url: string
+  price: number
+}
+
+const content = {
+  title: 'Shop',
+  text: 'Buy your developer accessories here.'
+}
 
 export function Shop() {
   return (
     <>
-      <h2>Shop</h2>
-      <p>Buy your developer accessories here.</p>
-      <Grid>
+      <Intro content={content} />
+      <GridAuto>
         <>
           {shopItems.map((product: Item, key) => (
             <Product key={key} product={product} />
           ))}
         </>
-      </Grid>
+      </GridAuto>
     </>
-  );
+  )
 }

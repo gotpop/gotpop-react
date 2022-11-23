@@ -23,11 +23,6 @@ export default function Nav({ navItems, iconsMap }: Props) {
 
   return (
     <nav className={styles.nav}>
-      <ButtonIcon
-        handleClick={openCart}
-        text="Cart"
-        icon={<AiOutlineShoppingCart />}
-      />
       {navItems?.map(item => (
         <Link key={item.id} to={item.href} data-test={item.test}>
           <>
@@ -36,6 +31,11 @@ export default function Nav({ navItems, iconsMap }: Props) {
           </>
         </Link>
       ))}
+      <ButtonIcon
+        handleClick={openCart}
+        text="Cart"
+        icon={<AiOutlineShoppingCart />}
+      />
     </nav>
   )
 }

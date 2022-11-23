@@ -1,9 +1,9 @@
-import styles from "./Grid.module.css";
+import styles from './Grid.module.css'
 
 type props = {
-  children: JSX.Element;
-};
+  children: JSX.Element
+}
 
 export default function Grid({ children }: props) {
-  return <div className={styles.grid}>{children}</div>;
+  return <div className={styles.grid}>{children}</div>
 }
