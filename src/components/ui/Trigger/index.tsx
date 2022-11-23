@@ -11,8 +11,7 @@ type Props = {
 const Trigger = ({ vars }: Props) => {
   const { menu, setMenu } = useContext(MenuContext);
 
-  const handleClick = (e) => {
-  console.log('e :', e);
+  const handleClick = () => {
     setMenu((prevState: { open: boolean }) => {
       const newState = !prevState.open;
 
