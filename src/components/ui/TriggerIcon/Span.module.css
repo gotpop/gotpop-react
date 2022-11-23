@@ -1,38 +1,36 @@
 .top {
   animation-name: topIn;
+}
 
-  @nest [open*="true"] & {
-    animation-name: topOut;
-    background-color: var(--error);
-  }
-
-  @nest button:hover [open*="true"] & {
-    background-color: var(--white);
-  }
+[open*="true"] .top {
+  animation-name: topOut;
+  background-color: var(--error);
 }
 
 .middle {
   animation-name: middleIn;
   translate: 0 calc(var(--local-size) * 0.45);
+}
 
-  @nest [open*="true"] & {
-    background-color: var(--error);
-    animation-name: middleOut;
-  }
+[open*="true"] .middle {
+  background-color: var(--error);
+  animation-name: middleOut;
 }
 
 .bottom {
   animation-name: bottomIn;
-
-  @nest [open*="true"] & {
-    background-color: var(--error);
-    animation-name: bottomOut;
-  }
-
-  @nest button:hover [open*="true"] & {
-    background-color: var(--white);
-  }
 }
+
+[open*="true"] .bottom {
+  background-color: var(--error);
+  animation-name: bottomOut;
+}
+
+button:hover [open*="true"] .top,
+button:hover [open*="true"] .bottom {
+  background-color: var(--white);
+}
+
 
 @keyframes topOut {
   0% {

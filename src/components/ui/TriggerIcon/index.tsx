@@ -16,6 +16,7 @@ export default function TriggerIcon({ menuState }: Props) {
   const triggerRef = trigger.current;
 
   useEffect(() => {
+    console.log('menuState :', menuState);
     menuState?.open ? triggerRef?.setAttribute("open", "true") : triggerRef?.setAttribute("open", "false");
   }, [menuState?.open]);
 
