@@ -1,11 +1,13 @@
-export const getComponent = (iconsMap, id) => {
-    const icon = iconsMap.get(parseInt(id))
+type Props = {
+    componentsMap: Map<number, any>;
+    id: string;
+};
 
-    return icon ? icon() : null
+const GetComponent = ({ componentsMap, id }: Props) => {
+    const gotComponent = (id: string) => componentsMap.get(parseInt(id))
+    const resolvedComponent = gotComponent(id)
+
+    return resolvedComponent()
 }
 
-export const getImage = (imagesMap, id) => {
-    const image = imagesMap.get(parseInt(id))
-
-    return image ? image : null
-}
+export default GetComponent

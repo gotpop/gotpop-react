@@ -1,1 +1,1 @@
-export const set = (prop, value) => document.documentElement.style.setProperty(prop, value)
+export const set = (prop: string, value: string | null) => document.documentElement.style.setProperty(prop, value)

@@ -9,7 +9,7 @@
   padding: var(--padding);
 
   @media (width > 600px) {
-    grid-column: span var(--grid-columns);
+    grid-column: span 12;
   }
 
   & h2 {

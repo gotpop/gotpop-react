@@ -1,11 +1,19 @@
-import { AiOutlineLink } from 'react-icons/ai'
-import { ILinkIcon } from '@types'
-import Link from 'next/link'
+import { Link } from "react-router-dom";
+import { ReactElement } from "react";
 import styles from './LinkIcon.module.css'
+
+type ILinkIcon = {
+  text?: string;
+  children?: string;
+  vars?: object;
+  properties?: { local: string; global: string }[];
+  icon?: ReactElement<any, any>;
+  href: string;
+}
 
 const LinkIcon = ({ icon, children, href, vars }: ILinkIcon) => {
   return (
-    <Link className={styles.link} href={href} style={vars}>
+    <Link className={styles.link} to={href} style={vars}>
       <>
         <span>{children}</span>
         {icon}
@@ -18,7 +26,7 @@ LinkIcon.defaultProps = {
   children: 'Visit',
   href: '/',
   icon: null,
-  vars: {}
+  vars: null
 }
 
 export default LinkIcon

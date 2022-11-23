@@ -1,6 +1,13 @@
-import { AiOutlineForm, AiOutlineHome } from 'react-icons/ai'
+import {
+  AiOutlineForm,
+  AiOutlineHome,
+  AiOutlineShoppingCart
+} from 'react-icons/ai'
 
+import { CSSProperties } from 'react'
 import { CgCardSpades } from 'react-icons/cg'
+import Grid from '@components/ui/Grid'
+import GridWrap from '@components/ui/GridWrap'
 import Logo from '@ui/Logo'
 import Nav from '@ui/Nav'
 import { navPrimary } from 'data/nav-primary'
@@ -9,20 +16,25 @@ import styles from './Header.module.css'
 const icons = new Map([
   [1, CgCardSpades],
   [2, AiOutlineForm],
-  [3, AiOutlineHome]
+  [3, AiOutlineHome],
+  [4, AiOutlineShoppingCart]
 ])
 
-type props = {
-  vars: object;
+type Props = {
+  vars: CSSProperties
 }
 
-const Header = ({ vars }: props) => {
+const Header = ({ vars }: Props) => {
   return (
-    <header className={styles.header} style={vars}>
-      <section className={styles.grid}>
-        <Logo />
-        <Nav navItems={navPrimary} iconsMap={icons} />
-      </section>
+    <header className={styles.header}>
+      <GridWrap>
+        <Grid>
+          <>
+            <Logo />
+            <Nav navItems={navPrimary} iconsMap={icons} />
+          </>
+        </Grid>
+      </GridWrap>
     </header>
   )
 }

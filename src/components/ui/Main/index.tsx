@@ -1,5 +1,17 @@
+import Grid from '../Grid'
+import GridWrap from '../GridWrap'
 import styles from './Main.module.css'
 
-export default function Main({ children }) {
-  return <div className={styles.main}>{children}</div>
+type Props = {
+  children: JSX.Element
+}
+
+export default function Main({ children }: Props) {
+  return (
+    <main className={styles.main}>
+      <GridWrap>
+        <Grid>{children}</Grid>
+      </GridWrap>
+    </main>
+  )
 }

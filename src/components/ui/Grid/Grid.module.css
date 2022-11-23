@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  grid-gap: calc(var(--padding) / 2);
+  margin: 0 var(--padding);
+
+  @media (width > 600px) {
+    align-content: start;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}

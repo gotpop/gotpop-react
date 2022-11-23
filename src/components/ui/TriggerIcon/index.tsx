@@ -1,17 +1,24 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
-import styles from './TriggerIcon.module.css'
-import stylesSpan from './Span.module.css'
+import styles from "./TriggerIcon.module.css";
+import stylesSpan from "./Span.module.css";
 
-export default function TriggerIcon({ menuState }) {
-  const trigger = useRef(null)
-  const { open } = menuState
+type MenuObject = {
+  open?: boolean;
+};
+
+type Props = {
+  menuState: MenuObject | null;
+};
+
+export default function TriggerIcon({ menuState }: Props) {
+  const trigger = useRef<HTMLSpanElement | null>(null);
+  const triggerRef = trigger.current;
 
   useEffect(() => {
-    open
-      ? trigger.current.setAttribute('open', true)
-      : trigger.current.setAttribute('open', false)
-  }, [menuState, open])
+    console.log('menuState :', menuState);
+    menuState?.open ? triggerRef?.setAttribute("open", "true") : triggerRef?.setAttribute("open", "false");
+  }, [menuState?.open]);
 
   return (
     <span className={styles.icon} ref={trigger}>
@@ -19,5 +26,5 @@ export default function TriggerIcon({ menuState }) {
       <span className={stylesSpan.middle}></span>
       <span className={stylesSpan.bottom}></span>
     </span>
-  )
+  );
 }

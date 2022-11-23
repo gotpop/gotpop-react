@@ -1,21 +1,35 @@
-import Image from 'next/image'
+import { CSSProperties } from 'react';
 import LinkIcon from '@ui/LinkIcon'
 import macPic from '@images/mac.png'
 import styles from './Panel.module.css'
 import stylesContent from './PanelContent.module.css'
 
-const Panel = ({ image, page }) => {
+type Props = {
+  image: string;
+  page: {
+    title: string;
+    excerpt: string;
+    id: string;
+    direction: string;
+    link: {
+      href: string;
+      text: string;
+    };
+  };
+};
+
+const Panel = ({ image, page }: Props) => {
   const { link, excerpt, title, id, direction } = page
-  const vars = { ['--local-direction' as string]: 'rtl' }
+  const vars = { ['--local-direction']: 'rtl' } as CSSProperties
 
   return (
-    <section style={direction === 'rtl' ? vars : null} className={styles.panel}>
+    <section style={direction === 'rtl' ? vars : undefined} className={styles.panel}>
       <div className={stylesContent.content}>
         <h3 id={`panel-${id}`}>{title}</h3>
         <p>{excerpt}</p>
         <LinkIcon href={link.href} />
       </div>
-      <Image
+      <img
         className={styles.image}
         src={image}
         alt="Image alt"

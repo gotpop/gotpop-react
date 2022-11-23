@@ -4,6 +4,7 @@
   --local-template: "head main" "head main" "head foot";
   --local-translate: var(--menu-state);
   --local-width: calc(100vw + var(--menu-side-width) - var(--scrollbar-width));
+  --local-gap: 0;
 
   display: grid;
   grid-template-areas: var(--local-template);
@@ -13,6 +14,7 @@
   transition: translate var(--timing) ease;
   translate: var(--local-translate);
   width: var(--local-width);
+  gap: var(--local-gap);
 
   @media (width > 600px) {
     --local-columns: 1fr;
@@ -20,5 +22,6 @@
     --local-template: "head" "main" "foot";
     --local-translate: var(--menu-open);
     --local-width: auto;
+    --local-gap: var(--spacing-lg);
   }
 }
