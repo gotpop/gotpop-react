@@ -1,8 +1,8 @@
-import { CSSProperties } from 'react'
+import { ReactElement } from 'react'
 import styles from './GridWrap.module.css'
 
 type props = {
-  children: JSX.Element
+  children: ReactElement
 }
 
 export default function GridWrap({ children }: props) {
