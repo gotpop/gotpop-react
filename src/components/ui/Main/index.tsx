@@ -8,7 +8,7 @@ type Props = {
 
 export default function Main({ children }: Props) {
   return (
-    <main className={styles.main} style={{ gridArea: 'main' }}>
+    <main className={styles.main}>
       <GridWrap>
         <Grid>{children}</Grid>
       </GridWrap>

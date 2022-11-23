@@ -20,7 +20,7 @@ type props = {
 
 const Footer = ({ vars }: props) => {
   return (
-    <footer className={styles.footer} style={{ gridArea: 'foot' }}>
+    <footer className={styles.footer}>
       <GridWrap>
         <Grid>
           <>

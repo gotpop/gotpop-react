@@ -5,6 +5,7 @@ import Grid from '@components/ui/Grid'
 import GridWrap from '@components/ui/GridWrap'
 import Header from '@blocks/Header'
 import Main from '@components/ui/Main'
+import Trigger from '@components/ui/Trigger'
 import { getScrollBarWidth } from '@utilities/scrollBarWidth'
 import styles from './Site.module.css'
 
@@ -22,7 +23,12 @@ export default function LayoutStandard({ children }: props) {
   return (
     <div className={styles.site}>
       <Header />
-      <Main>{children}</Main>
+      <Main>
+        <>
+          <Trigger />
+          {children}
+        </>
+      </Main>
       <Footer />
     </div>
   )

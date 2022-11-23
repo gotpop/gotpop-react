@@ -26,15 +26,7 @@ type Props = {
 
 const Header = ({ vars }: Props) => {
   return (
-    <header
-      className={styles.header}
-      style={{
-        gridArea: 'head',
-        position: 'sticky',
-        top: '0',
-        marginBottom: '2rem'
-      }}
-    >
+    <header className={styles.header}>
       <GridWrap>
         <Grid>
           <>
