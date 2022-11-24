@@ -28,6 +28,10 @@
     & span {
       color: var(--hwb-grape-5);
     }
+
+    &:hover {
+      border-color: var(--hwb-grape-5);
+    }
   }
   
   & a {
