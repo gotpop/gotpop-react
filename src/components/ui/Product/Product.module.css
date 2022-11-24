@@ -4,7 +4,6 @@
   overflow: hidden;
 }
 
-
 .content {
   --local-padding: var(--spacing);
   display: flex;
@@ -15,11 +14,24 @@
   @media (width > 600px) {
     --local-padding: var(--padding);
   }
-
+  
   & h3 {
     margin: 0;
     font-weight: 700;
+    margin: 0 0 calc(var(--text-mb) * 2) 0;
+
+    &::after {
+      background-color: currentColor;
+      content: "";
+      display: flex;
+      height: 1px;
+      margin: 0 0.5rem;
+      opacity: 0.3;
+      translate: 0 0.33em;
+      width: calc(100% - 1rem);
+    }
   }
+
   & p {
     margin: 0;
   }
@@ -44,4 +56,14 @@
   @media (width > 600px) {
     --local-display: block;
   }
+}
+
+.price {
+  display: inline-flex;
+  padding: calc(var(--padding-btn) / 2) var(--padding-btn);
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  align-items: center;
+  font-weight: 600;
+  font-size: var(--size-s-1);
 }

@@ -5,5 +5,5 @@ type props = {
 };
 
 export default function GridAuto({ children }: props) {
-  return <div className={styles.grid}>{children}</div>;
+  return <div className={styles.gridauto}>{children}</div>;
 }

@@ -7,9 +7,9 @@
   grid-area: head;
 
   @media (width > 600px) {
-    --local-bg-colour: hwb(0 100% 0% / 0.9);
+    --local-bg-colour: hwb(0 100% 0% / 0.95);
 
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
     border-radius: 0 0 var(--radius-xl) var(--radius-xl);
     position: var(--local-position);
     top: 0;

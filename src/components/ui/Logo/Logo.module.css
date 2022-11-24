@@ -7,13 +7,15 @@
 
   @media (width > 600px) {
     grid-column: var(--local-grid-column);
+    padding: calc(var(--padding) / 2) 0;
+    align-self: start;
   }
 
   & h1 {
     align-items: center;
     color: var(--local-colour);
     display: flex;
-    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: 200;
     gap: var(--local-gap);
     justify-content: space-between;

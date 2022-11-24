@@ -7,7 +7,7 @@
   align-items: center;
   background-color: var(--local-bg-colour);
   border-radius: var(--radius);
-  border: none;
+  border-color: transparent;
   color: var(--icon-colour);
   cursor: pointer;
   display: flex;

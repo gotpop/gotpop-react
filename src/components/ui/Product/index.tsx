@@ -37,7 +37,7 @@ const Product = ({ product }: Props) => {
       <div className={styles.content}>
         <section className={styles.intro}>
           <h3>{name}</h3>
-          <p>{formatCurrency(price)}</p>
+          <span className={styles.price}>{formatCurrency(price)}</span>
         </section>
         {quantity === 0 ? (
           <ButtonIcon
@@ -47,10 +47,9 @@ const Product = ({ product }: Props) => {
           />
         ) : (
           <div className={styles.controls}>
-            {quantity}
             <ButtonIcon text="-" handleClick={() => decreaseCartQuantity(id)} />
             <ButtonIcon
-              text="Remove"
+              text={`Remove ${quantity}`}
               vars={buttonRemoveVars}
               handleClick={() => removeFromCart(id)}
             />
