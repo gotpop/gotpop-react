@@ -4,9 +4,16 @@
 
   grid-area: foot;
   background: var(--local-bg);
+  padding: calc(var(--spacing-lg) * 3) 0;
 
   @media (width > 600px) {
     border-radius: var(--local-radius);
   }
 }
   
+.copyright {
+  grid-column: span 12;
+  color: var(--white);
+  font-size: var(--size-s-1);
+  text-align: center;
+}

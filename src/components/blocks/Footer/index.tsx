@@ -1,9 +1,9 @@
 import { AiFillHome } from 'react-icons/ai'
 import { CSSProperties } from 'react'
 import { GoZap } from 'react-icons/go'
-import Grid from '@components/ui/Grid'
-import GridWrap from '@components/ui/GridWrap'
-import Nav from '@ui/Nav'
+import Grid from '@ui/Grid'
+import GridWrap from '@ui/GridWrap'
+import { NavFooter } from '@ui/NavFooter'
 import { TfiGithub } from 'react-icons/tfi'
 import { navSecondary } from 'data/nav-secondary'
 import styles from './Footer.module.css'
@@ -24,8 +24,8 @@ const Footer = ({ vars }: props) => {
       <GridWrap>
         <Grid>
           <>
-            <Nav navItems={navSecondary} iconsMap={icons} />
-            <span>
+            <NavFooter navItems={navSecondary} iconsMap={icons} />
+            <span className={styles.copyright}>
               Copyright © {new Date().getFullYear()}. All rights reserved.
             </span>
           </>

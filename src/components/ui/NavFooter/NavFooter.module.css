@@ -1,0 +1,45 @@
+.navfooter {
+  --local-grid-column: 3 / 11;
+
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-s-1);
+  gap: calc(var(--padding) / 2);
+  color: var(--white);
+
+  @media (width > 600px) {
+    justify-self: initial;
+    align-self: center;
+    flex-direction: row;
+    grid-column: var(--local-grid-column);
+    /* background-color: var(--hwb-grape-3); */
+    padding: calc(var(--padding) / 2);
+    border-radius: var(--radius);
+    justify-content: end;
+  }
+
+  & button {
+    flex: auto;
+    background-color: transparent;
+    border-color: inherit;
+    border: 1px solid;
+  }
+
+  & a {
+    border-radius: var(--radius);
+    border: 1px solid;
+    border-color: inherit;
+    color: inherit;
+    display: inline-flex;
+    gap: calc(var(--padding-btn) / 2);
+    justify-content: space-between;
+    padding: calc(var(--padding-btn) / 2) var(--padding-btn);
+    transition: background-color var(--timing) ease;
+    flex: auto;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--accent);
+    }
+  }
+}
