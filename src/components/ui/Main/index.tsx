@@ -1,16 +1,17 @@
-import Grid from '../Grid'
+import GridAuto from '../GridAuto'
 import GridWrap from '../GridWrap'
+import { ReactElement } from 'react'
 import styles from './Main.module.css'
 
 type Props = {
-  children: JSX.Element
+  children: ReactElement
 }
 
 export default function Main({ children }: Props) {
   return (
     <main className={styles.main}>
       <GridWrap>
-        <Grid>{children}</Grid>
+        <GridAuto>{children}</GridAuto>
       </GridWrap>
     </main>
   )

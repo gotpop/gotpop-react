@@ -1,15 +1,17 @@
-.grid {
-  --local-grid-column: span 12;
-
-  @media (width > 600px) {
-    display: contents;
+.gridauto {
+  display: grid;
+  grid-gap: calc(var(--padding) / 2);
+  margin: 0 var(--padding);
+  
+  @media (width > 400px) {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, auto);
+    grid-auto-columns: auto;
   }
-
-  & > * {
-    grid-column: var(--local-grid-column);
-
-    @media (width > 600px) {
-      --local-grid-column: span 6;
-    }
+  
+  @media (width > 600px) {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-columns: 6fr 6fr;
   }
 }

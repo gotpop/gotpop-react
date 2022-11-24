@@ -19,13 +19,9 @@ export function Shop() {
   return (
     <>
       <Intro content={content} />
-      <GridAuto>
-        <>
-          {shopItems.map((product: Item, key) => (
-            <Product key={key} product={product} />
-          ))}
-        </>
-      </GridAuto>
+      {shopItems.map((product: Item, key) => (
+        <Product key={key} product={product} />
+      ))}
     </>
   )
 }
