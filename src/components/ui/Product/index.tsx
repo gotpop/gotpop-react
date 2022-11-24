@@ -1,4 +1,6 @@
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiFillMinusCircle, AiFillPlusCircle, AiOutlineShoppingCart } from 'react-icons/ai'
+
+import { BsTrash } from "react-icons/bs";
 import ButtonIcon from '../ButtonIcon'
 import { CSSProperties } from 'react'
 import { formatCurrency } from '@utilities/formatCurrency'
@@ -47,13 +49,14 @@ const Product = ({ product }: Props) => {
           />
         ) : (
           <div className={styles.controls}>
-            <ButtonIcon text="-" handleClick={() => decreaseCartQuantity(id)} />
+            <ButtonIcon icon={<AiFillMinusCircle />} handleClick={() => decreaseCartQuantity(id)} />
             <ButtonIcon
               text={`Remove ${quantity}`}
               vars={buttonRemoveVars}
               handleClick={() => removeFromCart(id)}
+              icon={<BsTrash />}
             />
-            <ButtonIcon text="+" handleClick={() => increaseCartQuantity(id)} />
+            <ButtonIcon icon={<AiFillPlusCircle />} handleClick={() => increaseCartQuantity(id)} />
           </div>
         )}
       </div>
