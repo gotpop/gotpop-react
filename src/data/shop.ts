@@ -3,24 +3,24 @@ export const shopItems = [
         "id": 1,
         "name": "HTML & JS",
         "price": 10.99,
-        "url": "/images/books.png"
+        "url": "/books.png"
     },
     {
         "id": 2,
         "name": "Stunning CSS",
         "price": 19.99,
-        "url": "/images/html.png"
+        "url": "/html.png"
     },
     {
         "id": 3,
         "name": "Keyboard",
         "price": 120,
-        "url": "/images/keyboard.png"
+        "url": "/keyboard.png"
     },
     {
         "id": 4,
         "name": "MacBook Pro",
         "price": 1200,
-        "url": "/images/mac.png"
+        "url": "/mac.png"
     }
 ]
