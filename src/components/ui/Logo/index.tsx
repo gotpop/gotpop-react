@@ -9,7 +9,7 @@ type Props = {
 const Logo = ({ vars }: Props) => {
   return (
     <Link className={styles.logo} to="/">
-      <h1>
+      <h1 id="logo">
         <GiSpiralLollipop />
         <span>Starter</span>
       </h1>

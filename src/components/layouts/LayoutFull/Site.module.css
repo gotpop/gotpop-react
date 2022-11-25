@@ -6,6 +6,7 @@
   --local-width: calc(100vw + var(--menu-side-width) - var(--scrollbar-width));
   --local-gap: 0;
 
+  background-color: var(--hwb-grey-1);
   display: grid;
   gap: var(--local-gap);
   grid-template-areas: var(--local-template);
@@ -22,8 +23,8 @@
     --local-columns: 1fr;
     --local-rows: auto minmax(80vh, max-content) auto;
     --local-template: "head" "main" "foot";
-    --local-translate: var(--menu-open);
+    --local-translate: none;
     --local-width: auto;
-    --local-gap: var(--spacing-lg);
+    --local-gap: 0;
   }
 }

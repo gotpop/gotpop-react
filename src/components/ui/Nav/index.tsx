@@ -1,6 +1,6 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import ButtonIcon from '../ButtonIcon'
-import GetComponent from '@utilities/getComponent'
+import { GetComponent } from '@utilities/getComponent'
 import { IconType } from 'react-icons'
 import { Link } from 'react-router-dom'
 import styles from './Nav.module.css'

@@ -26,7 +26,7 @@
       --local-margin: 0;
     }
 
-    @media (--laptop) {
+    @media (width > 600px) {
       --local-gap: 1rem;
     }
   }

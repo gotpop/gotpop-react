@@ -1,40 +1,104 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, useEffect } from 'react'
+
+import { AiOutlineArrowRight } from 'react-icons/ai'
+import Grid from '../Grid'
+import GridWrap from '../GridWrap'
 import LinkIcon from '@ui/LinkIcon'
 import macPic from '@images/mac.png'
 import styles from './Panel.module.css'
 import stylesContent from './PanelContent.module.css'
+import { useOnScreen } from '@hooks/useOnScreen'
+import { useRef } from 'react'
 
 type Props = {
-  image: string;
+  image: string | null | undefined
   page: {
-    title: string;
-    excerpt: string;
-    id: string;
-    direction: string;
+    title: string
+    excerpt: string
+    id: string
+    direction: string
     link: {
-      href: string;
-      text: string;
-    };
-  };
-};
+      href: string
+      text: string
+    }
+  }
+}
+
+const contentIn = {
+  transform: ['translateY(50%)', 'translateY(0%)'],
+  opacity: [0, 1],
+  easing: 'ease-out'
+}
+
+const animateImage = {
+  transform: ['translatex(20%)', 'translatex(0%)'],
+  opacity: [0, 1],
+  easing: 'ease-out'
+}
+
+const contentTiming = {
+  duration: 400,
+  delay: 20,
+  fill: 'both'
+}
 
 const Panel = ({ image, page }: Props) => {
   const { link, excerpt, title, id, direction } = page
+  const imageRef = useRef<HTMLImageElement>(null)
+  const contentRef = useRef<HTMLDivElement | null>(null)
+  const isOnScreen = useOnScreen(contentRef)
+
   const vars = { ['--local-direction']: 'rtl' } as CSSProperties
+  const varsGrid = { ['--local-min-height']: '100vh' } as CSSProperties
+
+  useEffect(() => {
+    const contentVar = contentRef.current
+    const content = contentVar?.animate(
+      contentIn,
+      contentTiming as KeyframeAnimationOptions
+    )
+    content?.pause()
+
+    const imageVar = imageRef.current
+    const image = imageVar?.animate(
+      animateImage,
+      contentTiming as KeyframeAnimationOptions
+    )
+    image?.pause()
+
+    if (isOnScreen) {
+      content?.play()
+      image?.play()
+    } else {
+      content?.reverse()
+      image?.reverse()
+    }
+  }, [isOnScreen])
 
   return (
-    <section style={direction === 'rtl' ? vars : undefined} className={styles.panel}>
-      <div className={stylesContent.content}>
-        <h3 id={`panel-${id}`}>{title}</h3>
-        <p>{excerpt}</p>
-        <LinkIcon href={link.href} />
-      </div>
-      <img
-        className={styles.image}
-        src={image}
-        alt="Image alt"
-        placeholder="blur"
-      />
+    <section
+      style={direction === 'rtl' ? vars : undefined}
+      className={styles.panel}
+    >
+      <GridWrap>
+        <Grid vars={varsGrid}>
+          <>
+            <div ref={contentRef} className={stylesContent.content}>
+              <h3 id={`panel-${id}`}>{title}</h3>
+              <p>{excerpt}</p>
+              <LinkIcon href={link.href} icon={<AiOutlineArrowRight />}>
+                Buy now
+              </LinkIcon>
+            </div>
+            <img
+              className={styles.image}
+              src={image as string}
+              alt="Image alt"
+              ref={imageRef}
+            />
+          </>
+        </Grid>
+      </GridWrap>
     </section>
   )
 }

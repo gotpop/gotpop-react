@@ -5,11 +5,11 @@
   display: flex;
   gap: calc(var(--padding) / 2);
 
-  @media (--laptop) {
+  @media (width > 600px) {
     flex-direction: column;
   }
 
-  @media (--laptop) {
+  @media (width > 600px) {
     flex: 1 1 40%;
     align-self: baseline;
   }
@@ -36,7 +36,7 @@
       gap: var(--padding);
     }
 
-    @media (--laptop) {
+    @media (width > 600px) {
       --local-link-padding: calc(var(--padding) / 2);
     }
 
