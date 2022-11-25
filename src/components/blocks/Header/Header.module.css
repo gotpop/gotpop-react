@@ -14,5 +14,6 @@
     position: var(--local-position);
     top: 0;
     z-index: 9999;
+    width: calc(100vw - var(--scrollbar-width));
   }
 }

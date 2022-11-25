@@ -26,7 +26,7 @@ type Props = {
 
 const Header = ({ vars }: Props) => {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={vars}>
       <GridWrap>
         <Grid>
           <>

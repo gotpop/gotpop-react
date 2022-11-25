@@ -15,7 +15,7 @@ export interface ILinkInternal {
     vars?: object;
     children?: string;
     properties?: { local: string; global: string }[];
-    icon?: IconType;
+    icon?: ReactElement<any, any>;
     href: string;
 }
 

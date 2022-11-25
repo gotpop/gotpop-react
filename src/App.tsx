@@ -14,14 +14,12 @@ function App() {
   return (
     <ShoppingCartProvider>
       <MenuProvider>
-        <LayoutStandard>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
-        </LayoutStandard>
       </MenuProvider>
     </ShoppingCartProvider>
   )

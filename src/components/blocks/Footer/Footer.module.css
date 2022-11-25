@@ -1,10 +1,12 @@
 .footer {
   --local-bg: var(--hwb-grape-4);
   --local-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  --local-scroll-snap-align: initial;
 
   grid-area: foot;
   background: var(--local-bg);
   padding: calc(var(--spacing-lg) * 3) 0;
+  scroll-snap-align: var(--local-scroll-snap-align);
 
   @media (width > 600px) {
     border-radius: var(--local-radius);

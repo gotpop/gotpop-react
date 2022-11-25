@@ -1,7 +1,10 @@
 .grid {
+  --local-min-height: initial;
+
   display: grid;
   grid-gap: calc(var(--padding) / 2);
   margin: 0 var(--padding);
+  min-height: var(--local-min-height);
 
   @media (width > 600px) {
     grid-template-columns: repeat(12, 1fr);

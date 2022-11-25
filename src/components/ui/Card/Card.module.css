@@ -30,7 +30,7 @@
       --local-gap: calc(var(--padding) * 2);
     }
 
-    @media (--laptop) {
+    @media (width > 600px) {
       --local-direction: row;
     }
 

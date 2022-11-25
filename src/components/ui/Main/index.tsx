@@ -5,14 +5,25 @@ import styles from './Main.module.css'
 
 type Props = {
   children: ReactElement
+  fullWidth: boolean
 }
 
-export default function Main({ children }: Props) {
+const Main = ({ children, fullWidth }: Props) => {
   return (
     <main className={styles.main}>
-      <GridWrap>
-        <GridAuto>{children}</GridAuto>
-      </GridWrap>
+      {fullWidth ? (
+        children
+      ) : (
+        <GridWrap>
+          <GridAuto>{children}</GridAuto>
+        </GridWrap>
+      )}
     </main>
   )
 }
+
+Main.defaultProps = {
+  fullWidth: false
+}
+
+export default Main
