@@ -25,7 +25,7 @@ type Props = {
 }
 
 const contentIn = {
-  transform: ['translateY(50%)', 'translateY(0%)'],
+  transform: ['translatex(-20%)', 'translatex(0%)'],
   opacity: [0, 1],
   easing: 'ease-out'
 }
