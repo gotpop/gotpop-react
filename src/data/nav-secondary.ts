@@ -15,8 +15,15 @@ export const navSecondary = [
     },
     {
         id: '3',
-        text: 'Live',
-        test: 'live',
+        text: 'Preview',
+        test: 'preview',
+        href: 'https://gotpop-react-git-main-teamgotpop.vercel.app',
+        internal: false
+    },
+    {
+        id: '4',
+        text: 'Production',
+        test: 'production',
         href: 'https://gotpop-react.vercel.app',
         internal: false
     }

@@ -31,11 +31,6 @@ export function NavFooter({ navItems, iconsMap }: Props) {
           </>
         </Link>
       ))}
-      <ButtonIcon
-        handleClick={openCart}
-        text="Cart"
-        icon={<AiOutlineShoppingCart />}
-      />
     </nav>
   )
 }
