@@ -38,7 +38,7 @@ const animateImage = {
 
 const contentTiming = {
   duration: 400,
-  delay: 20,
+  delay: 1000,
   fill: 'both'
 }
 
