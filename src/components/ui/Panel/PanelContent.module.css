@@ -12,6 +12,8 @@
   grid-column: var(--local-grid-column);
   justify-content: center;
   padding: var(--local-padding);
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 
   @media (width > 600px) {
     --local-align: flex-start;

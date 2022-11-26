@@ -4,8 +4,6 @@
 
   background-color: var(--local-bg-colour);
   direction: var(--local-direction);
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
   min-height: 100vh;
 
   &:nth-of-type(odd) {
