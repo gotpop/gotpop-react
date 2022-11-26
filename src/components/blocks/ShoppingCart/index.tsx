@@ -1,8 +1,10 @@
 import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { BsFillCartCheckFill } from 'react-icons/bs'
 import ButtonIcon from '@components/ui/ButtonIcon'
 import { CSSProperties } from 'react'
 import { CartItem } from '@blocks/CartItem'
 import { Drawer } from '@components/ui/Drawer'
+import Grid from '@components/ui/Grid'
 import { formatCurrency } from '@utilities/formatCurrency'
 import { shopItems } from '@data/shop'
 import styles from './ShoppingCart.module.css'
@@ -23,23 +25,29 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   return (
     <Drawer isOpen={isOpen}>
       <section className={styles.cart}>
-        <ButtonIcon
-          icon={<AiOutlineCloseCircle />}
-          handleClick={closeCart}
-          vars={closeVars}
-        />
-        <h2>Cart</h2>
-        {cartItems.map(item => (
-          <CartItem key={item.id} {...item} />
-        ))}
-        <div>
-          {formatCurrency(
-            cartItems.reduce((total, cartItem) => {
-              const item = shopItems.find(i => i.id === cartItem.id)
-              return total + (item?.price || 0) * cartItem.quantity
-            }, 0)
-          )}
-        </div>
+        <Grid>
+          <>
+            <section className={styles.intro}>
+              <ButtonIcon
+                icon={<AiOutlineCloseCircle />}
+                handleClick={closeCart}
+                vars={closeVars}
+              />
+              <h2>Cart <BsFillCartCheckFill/></h2>
+            </section>
+            {cartItems.map(item => (
+              <CartItem key={item.id} {...item} />
+            ))}
+            <div className={styles.total}>
+              {formatCurrency(
+                cartItems.reduce((total, cartItem) => {
+                  const item = shopItems.find(i => i.id === cartItem.id)
+                  return total + (item?.price || 0) * cartItem.quantity
+                }, 0)
+              )}
+            </div>
+          </>
+        </Grid>
       </section>
     </Drawer>
   )

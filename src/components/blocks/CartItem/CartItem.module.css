@@ -1,14 +1,19 @@
 .cart {
   background-color: var(--white);
+  grid-column: span 6;
+  overflow: hidden;
 
   @media (width > 600px) {
     border-radius: var(--radius);
   }
 
+  .content {
+    padding: var(--padding);
+  }
+
   & img {
-    width: 125px;
-    height: 75px; 
-    object-fit: cover;
+    max-width: 100%;
+    height: auto; 
   }
 
   & span {
