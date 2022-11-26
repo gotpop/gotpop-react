@@ -24,19 +24,21 @@ export function CartItem({ id, quantity }: CartItemProps) {
   return (
     <section className={styles.cart}>
       <img src={item.url} />
-      <div>
+      <section className={styles.content}>
         <div>
-          {item.name}
-          {quantity > 1 && <span>x{quantity}</span>}
+          <div>
+            {item.name}
+            {quantity > 1 && <span>x{quantity}</span>}
+          </div>
+          <div>{formatCurrency(item.price)}</div>
         </div>
-        <div>{formatCurrency(item.price)}</div>
-      </div>
-      <div> {formatCurrency(item.price * quantity)}</div>
-      <ButtonIcon
-        icon={<AiOutlineCloseCircle />}
-        handleClick={() => removeFromCart(item.id)}
-        vars={buttonRemoveVars}
-      />
+        <div> {formatCurrency(item.price * quantity)}</div>
+        <ButtonIcon
+          icon={<AiOutlineCloseCircle />}
+          handleClick={() => removeFromCart(item.id)}
+          vars={buttonRemoveVars}
+        />
+      </section>
     </section>
   )
 }
