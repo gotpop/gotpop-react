@@ -79,12 +79,13 @@ const Panel = ({ image, page }: Props) => {
     <section
       style={direction === 'rtl' ? vars : undefined}
       className={styles.panel}
+      id={`panel-${id}`}
     >
       <GridWrap>
         <Grid vars={varsGrid}>
           <>
             <div ref={contentRef} className={stylesContent.content}>
-              <h3 id={`panel-${id}`}>{title}</h3>
+              <h3>{title}</h3>
               <p>{excerpt}</p>
               <LinkIcon href={link.href} icon={<AiOutlineArrowRight />}>
                 Buy now
