@@ -6,6 +6,7 @@
   direction: var(--local-direction);
   min-height: 100vh;
   scroll-snap-stop: always;
+  scroll-snap-align: center;
 
   &:nth-of-type(odd) {
     --local-bg-colour: hwb(38deg 90% 2%);
