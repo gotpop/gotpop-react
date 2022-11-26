@@ -1,4 +1,4 @@
-name: 'Test'
+name: 'Test with Vitest 🧪'
 on: 
   pull_request:
 
@@ -7,16 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: 'Install Node'
+    - name: 'Install Node 🏭'
       uses: actions/setup-node@v2
       with:
         node-version: '18.x'
-    - name: 'Install Deps'
+    - name: 'Install Deps 🏗️'
       run: npm install
-    - name: 'Run tests'
+    - name: 'Run tests ⚗️'
       run: npm run test
-    - name: 'Test'
+    - name: 'Test coverage 🔬'
       run: npx vitest --coverage
-    - name: 'Report Coverage'
+    - name: 'Report Coverage 📰'
       if: always() # Also generate the report if tests are failing
       uses:  davelosert/vitest-coverage-report-action@v1
