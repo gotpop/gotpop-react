@@ -44,9 +44,10 @@ const contentTiming = {
 
 const Panel = ({ image, page }: Props) => {
   const { link, excerpt, title, id, direction } = page
-  const imageRef = useRef<HTMLImageElement>(null)
+  const sectionRef = useRef<HTMLElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
-  const isOnScreen = useOnScreen(contentRef)
+  const imageRef = useRef<HTMLImageElement>(null)
+  const isOnScreen = useOnScreen(sectionRef)
 
   const vars = { ['--local-direction']: 'rtl' } as CSSProperties
   const varsGrid = { ['--local-min-height']: '100vh' } as CSSProperties
@@ -80,6 +81,7 @@ const Panel = ({ image, page }: Props) => {
       style={direction === 'rtl' ? vars : undefined}
       className={styles.panel}
       id={`panel-${id}`}
+      ref={sectionRef}
     >
       <GridWrap>
         <Grid vars={varsGrid}>
