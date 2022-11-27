@@ -19,8 +19,9 @@ export const getScrollTimes = () => {
     console.log('timesEventFired :', timesEventFired);
     // console.log('Wheel Event: ', e.wheelDeltaY)
 
-    if (timesEventFired > 50) {
-      root.style.setProperty('--scroll-type', 'initial')
+    if (timesEventFired > 30) {
+      // root.style.setProperty('--scroll-type', 'initial')
+      root.style.setProperty('--scroll-type', 'proximity')
     } else {
       root.style.setProperty('--scroll-type', 'mandatory')
     }
