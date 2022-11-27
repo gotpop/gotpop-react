@@ -11,7 +11,8 @@ import styles from './Footer.module.css'
 const icons = new Map([
   [1, AiFillHome],
   [2, TfiGithub],
-  [3, GoZap]
+  [3, GoZap],
+  [4, GoZap]
 ])
 
 type props = {

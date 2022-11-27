@@ -12,6 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
   
   @media (width > 600px) {
     --local-image: none;
