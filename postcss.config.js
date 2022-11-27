@@ -1,6 +1,5 @@
 module.exports = () => ({
     plugins: {
-        'postcss-nested': {},
-        'postcss-media-minmax': {},
+        'postcss-preset-env': { stage: 0 }
     }
 })
