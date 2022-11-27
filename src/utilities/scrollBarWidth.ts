@@ -13,10 +13,17 @@ export const getScrollTimes = () => {
 
   
   function handler(e) {
+    let root = document.documentElement
+    
     timesEventFired++
     console.log('timesEventFired :', timesEventFired);
     // console.log('Wheel Event: ', e.wheelDeltaY)
 
+    if (timesEventFired > 50) {
+      root.style.setProperty('--scroll-type', 'initial')
+    } else {
+      root.style.setProperty('--scroll-type', 'mandatory')
+    }
 
     setTimeout(()=> {
       timesEventFired = 0
