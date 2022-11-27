@@ -1,3 +1,6 @@
+// @ts-nocheck
+
+
 export const getScrollBarWidth = () => {
   let root = document.documentElement
   const width = window.innerWidth - root.clientWidth
