@@ -12,7 +12,8 @@ type props = {
 }
 
 export const varsHeader = { ['--local-position']: 'fixed' }
-export const varsFooter = { ['--local-scroll-snap-align']: 'start' }
+export const varsFooter = { ['--local-scroll-snap-align']: 'end' }
+const varsTrigger = { ['--local-position']: 'absolute' }
 
 export default function LayoutFull({ children }: props) {
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function LayoutFull({ children }: props) {
       <Header vars={varsHeader as CSSProperties} />
       <Main fullWidth={true}>
         <>
-          <Trigger />
+          <Trigger vars={varsTrigger} />
           {children}
         </>
       </Main>
