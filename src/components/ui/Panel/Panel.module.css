@@ -25,7 +25,7 @@
   @media (width > 600px) {
     --local-grid-column: 4 / 13;
 
-    /* margin: 3rem 0 0 0; */
+    margin: 3rem 0 0 0;
     grid-row: 1;
   }
 }
