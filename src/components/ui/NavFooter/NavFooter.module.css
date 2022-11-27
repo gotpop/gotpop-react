@@ -1,21 +1,22 @@
 .navfooter {
-  --local-grid-column: 3 / 11;
+  --local-grid-column: span 12;
 
+  color: var(--white);
   display: flex;
   flex-direction: column;
   font-size: var(--size-s-1);
   gap: calc(var(--padding) / 2);
-  color: var(--white);
+  grid-column: var(--local-grid-column);
 
   @media (width > 600px) {
-    justify-self: initial;
+    --local-grid-column: 3 / 11;
+
     align-self: center;
-    flex-direction: row;
-    grid-column: var(--local-grid-column);
-    /* background-color: var(--hwb-grape-3); */
-    padding: calc(var(--padding) / 2);
     border-radius: var(--radius);
+    flex-direction: row;
     justify-content: end;
+    justify-self: initial;
+    padding: calc(var(--padding) / 2);
   }
 
   & button {
