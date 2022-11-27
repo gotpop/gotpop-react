@@ -9,12 +9,13 @@ export const getScrollBarWidth = () => {
 }
 
 export const getScrollTimes = () => {
-  if (localStorage.getItem('trackpad') !== null) return
-
+  
   let timesEventFired = 0
-
+  
   
   function handler(e) {
+    if (localStorage.getItem('trackpad') !== null) return
+    
     let root = document.documentElement
     
     timesEventFired++
