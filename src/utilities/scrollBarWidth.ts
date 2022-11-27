@@ -9,6 +9,8 @@ export const getScrollBarWidth = () => {
 }
 
 export const getScrollTimes = () => {
+  if (localStorage.getItem('trackpad') !== null) return
+
   let timesEventFired = 0
 
   
@@ -19,9 +21,11 @@ export const getScrollTimes = () => {
     console.log('timesEventFired :', timesEventFired);
     // console.log('Wheel Event: ', e.wheelDeltaY)
 
-    if (timesEventFired > 30) {
+    if (timesEventFired > 50) {
       // root.style.setProperty('--scroll-type', 'initial')
       root.style.setProperty('--scroll-type', 'proximity')
+
+      localStorage.setItem('trackpad', 'true')
     } else {
       root.style.setProperty('--scroll-type', 'mandatory')
     }
