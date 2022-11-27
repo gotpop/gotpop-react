@@ -1,3 +1,5 @@
+@custom-media --ipad (width > 600px);
+
 .trigger {
   --icon-colour: var(--white);
   --local-display: flex;
@@ -15,7 +17,7 @@
   transition: background-color var(--timing) ease;
   position: var(--local-position);
 
-  @media (width > 600px) {
+  @media (--ipad) {
     --local-display: none;
   }
 

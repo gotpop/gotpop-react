@@ -1,6 +1,12 @@
-module.exports = (ctx) => ({
+module.exports = () => ({
     plugins: {
-        'postcss-import': {},
         'postcss-nested': {},
+        'postcss-preset-env': {
+            stage: 0,
+            features: {
+                'media-query-ranges': true,
+                'custom-media-queries': true
+            }
+        },
     }
 })
