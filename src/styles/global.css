@@ -9,11 +9,20 @@
 }
 
 html {
+  --local-scroll-type: mandatory;
+  
   scroll-behavior: smooth;
   overflow-y: scroll;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-margin: 4rem 0;
+  scroll-snap-type: y var(--local-scroll-type);
+  
+  @media (width > 600px) {
+    --local-scroll-type: proximity;
+  }
+
+  @media (width > 1400px) {
+    --local-scroll-type: mandatory;
+  }
 }
 
 body {
