@@ -37,8 +37,10 @@ const Panel = ({ compact, image, page }: Props) => {
   const varsGrid = { ['--local-min-height']: '100vh' } as CSSProperties
 
   useEffect(() => {
-    panelAnimations(contentRef.current, imageRef.current, isOnScreen)
-  }, [isOnScreen])
+    !compact
+      ? panelAnimations(contentRef.current, imageRef.current, isOnScreen)
+      : null
+  }, [isOnScreen, compact])
 
   return (
     <section
