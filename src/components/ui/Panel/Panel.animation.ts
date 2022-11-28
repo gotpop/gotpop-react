@@ -1,12 +1,12 @@
 const contentKeyframes = {
-    transform: ['translatex(-20%)', 'translatex(0%)'],
-    opacity: [0, 1],
+    transform: ['translatex(-5%)', 'translatex(0%)'],
+    opacity: [.5, 1],
     easing: 'ease-out'
 }
 
 const imageKeyframes = {
-    transform: ['translatex(20%)', 'translatex(0%)'],
-    opacity: [0, 1],
+    transform: ['translatex(5%)', 'translatex(0%)'],
+    opacity: [.5, 1],
     easing: 'ease-out'
 }
 
