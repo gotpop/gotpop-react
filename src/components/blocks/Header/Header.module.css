@@ -1,19 +1,32 @@
+@custom-media --ipad (width > 600px);
+@custom-media --laptop (width > 1000px);
+@custom-media --desktop (width > 1200px);
+
 .header {
   --local-position: sticky;
   --local-bg-colour: var(--white);
+  --local-radius: var(--radius);
+  --local-border-radius: 0 0 var(--local-radius) var(--local-radius);
 
   background-color: var(--local-bg-colour);
-  transition: background-color 0.5s ease;
   grid-area: head;
 
-  @media (width > 600px) {
+  @media (--ipad) {
     --local-bg-colour: hwb(0 100% 0% / 0.95);
 
     backdrop-filter: blur(10px);
-    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    border-radius: var(--local-border-radius);
     position: var(--local-position);
     top: 0;
     z-index: 9999;
     width: calc(100vw - var(--scrollbar-width));
+  }
+
+  @media (--laptop) {
+    --local-radius: var(--radius-lg);
+  }
+
+  @media (--desktop) {
+    --local-radius: var(--radius-xl);
   }
 }

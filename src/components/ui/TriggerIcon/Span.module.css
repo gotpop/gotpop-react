@@ -26,12 +26,6 @@
   animation-name: bottomOut;
 }
 
-button:hover [open*="true"] .top,
-button:hover [open*="true"] .bottom {
-  background-color: var(--white);
-}
-
-
 @keyframes topOut {
   0% {
     translate: 0 0em;

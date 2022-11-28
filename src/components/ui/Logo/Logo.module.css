@@ -1,11 +1,13 @@
+@custom-media --ipad (width > 600px);
+
 .logo {
-  --local-margin: 0 0 var(--text-mb) 0;
+  --local-margin: var(--spacing) 0 var(--text-mb) 0;
   --local-grid-column: 1 / 4;
   --local-gap: 0.5rem;
 
   display: flex;
 
-  @media (width > 600px) {
+  @media (--ipad) {
     grid-column: var(--local-grid-column);
     padding: calc(var(--padding) / 2) 0;
     align-self: start;
@@ -22,11 +24,8 @@
     margin: var(--local-margin);
     padding: 0;
 
-    @media (width > 600px) {
+    @media (--ipad) {
       --local-margin: 0;
-    }
-
-    @media (width > 600px) {
       --local-gap: 1rem;
     }
   }

@@ -1,17 +1,25 @@
+@custom-media --ipad (width > 600px);
+@custom-media --desktop (width > 1200px);
+
 .footer {
   --local-bg: var(--hwb-grape-4);
-  --local-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  --local-radius: var(--radius-lg);
+  --local-border-radius: var(--local-radius) var(--local-radius) 0 0;
   --local-scroll-snap-align: initial;
 
-  grid-area: foot;
+  grid-area: foot; 
   background: var(--local-bg);
   padding: calc(var(--spacing-lg) * 3) 0;
   scroll-snap-align: var(--local-scroll-snap-align);
   scroll-snap-stop: always;
 
-  @media (width > 600px) {
-    border-radius: var(--local-radius);
+  @media (--ipad) {
+    border-radius: var(--local-border-radius);
     width: calc(100vw - var(--scrollbar-width));
+  }
+
+  @media (--desktop) {
+    --local-radius: var(--radius-xl);
   }
 }
   
