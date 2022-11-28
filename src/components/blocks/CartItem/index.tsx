@@ -25,16 +25,19 @@ export function CartItem({ id, quantity }: CartItemProps) {
     <section className={styles.cart}>
       <img src={item.url} />
       <section className={styles.content}>
-        <div>
-          <div>
+        <div className={styles.intro}>
+          <div className={styles.title}>
             {item.name}
-            {quantity > 1 && <span>x{quantity}</span>}
+            {quantity > 1 && <span>x {quantity}</span>}
           </div>
-          <div>{formatCurrency(item.price)}</div>
+          <div className={styles.price}>Item: {formatCurrency(item.price)}</div>
+          <div className={styles.total}>
+            Total: {formatCurrency(item.price * quantity)}
+          </div>
         </div>
-        <div> {formatCurrency(item.price * quantity)}</div>
         <ButtonIcon
           icon={<AiOutlineCloseCircle />}
+          text="Remove from cart"
           handleClick={() => removeFromCart(item.id)}
           vars={buttonRemoveVars}
         />
