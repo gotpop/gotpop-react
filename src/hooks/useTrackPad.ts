@@ -11,7 +11,7 @@ export function useTrackPad() {
         function handleWheel(e) {
             const storage = localStorage.getItem('trackPad')
             
-            if (storage !== null) return
+            // if (storage !== null) return
 
             timesEventFired++
 
