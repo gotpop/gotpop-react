@@ -31,8 +31,6 @@ export function Home() {
 
     if (isTrackPad) {
       root.style.setProperty('--scroll-type', 'proximity')
-    } else {
-      root.style.setProperty('--scroll-type', 'mandatory')
     }
   }, [isTrackPad])
 
