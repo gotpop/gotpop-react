@@ -20,3 +20,24 @@
     align-self: center;
   }
 }
+
+.intro {
+  margin-bottom: var(--padding);
+}
+
+.title {
+  display: flex;
+  gap: var(--padding);
+
+  & span {
+    font-weight: 700;
+  }
+}
+
+.price {
+  font-stayle: italic;
+}
+
+.total {
+  font-weight: 900;
+}

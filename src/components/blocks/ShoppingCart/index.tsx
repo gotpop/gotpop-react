@@ -33,18 +33,23 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                 handleClick={closeCart}
                 vars={closeVars}
               />
-              <h2>Cart <BsFillCartCheckFill/></h2>
+              <h2>
+                Cart <BsFillCartCheckFill />
+              </h2>
             </section>
             {cartItems.map(item => (
               <CartItem key={item.id} {...item} />
             ))}
             <div className={styles.total}>
-              {formatCurrency(
-                cartItems.reduce((total, cartItem) => {
-                  const item = shopItems.find(i => i.id === cartItem.id)
-                  return total + (item?.price || 0) * cartItem.quantity
-                }, 0)
-              )}
+              <span>Cart total: </span>
+              <span>
+                {formatCurrency(
+                  cartItems.reduce((total, cartItem) => {
+                    const item = shopItems.find(i => i.id === cartItem.id)
+                    return total + (item?.price || 0) * cartItem.quantity
+                  }, 0)
+                )}
+              </span>
             </div>
           </>
         </Grid>

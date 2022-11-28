@@ -12,7 +12,7 @@
   background-color: var(--local-bg-colour);
   border-radius: var(--local-radius);
   min-height: 100vh;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
   position: fixed;
   right: 0;
   top: 0;
