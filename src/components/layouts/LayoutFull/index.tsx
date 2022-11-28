@@ -1,10 +1,10 @@
 import { CSSProperties, ReactElement, useEffect } from 'react'
-import { getScrollBarWidth, getScrollTimes } from '@utilities/scrollBarWidth'
 
 import Footer from '@blocks/Footer'
 import Header from '@blocks/Header'
 import Main from '@components/ui/Main'
 import Trigger from '@components/ui/Trigger'
+import { getScrollBarWidth } from '@utilities/scrollBarWidth'
 import styles from './Site.module.css'
 
 type props = {
