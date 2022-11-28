@@ -1,6 +1,5 @@
 import { GetComponent } from '@utilities/getComponent'
 import { IconType } from 'react-icons'
-import { Link } from 'react-router-dom'
 import styles from './NavFooter.module.css'
 
 type NavItem = {
