@@ -9,6 +9,7 @@ import keyboardPic from '@images/keyboard.png'
 import macPic from '@images/mac.png'
 import { pages } from '@data/pages'
 import { useEffect } from 'react'
+import { useTrackPad } from '@hooks/useTrackPad'
 
 const content = {
   title: 'About',
@@ -23,6 +24,8 @@ const imagesMap = new Map([
 ])
 
 export function Home() {
+  const isTrackPad = useTrackPad()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

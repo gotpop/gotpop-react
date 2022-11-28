@@ -18,7 +18,6 @@ const varsTrigger = { ['--local-position']: 'absolute' }
 export default function LayoutFull({ children }: props) {
   useEffect(() => {
     getScrollBarWidth()
-    getScrollTimes()
   }, [])
 
   return (
