@@ -1,7 +1,16 @@
+@custom-media --phone (width < 600px);
+@custom-media --ipad (width > 600px);
+
 .product {
   background: var(--hwb-grey-1);
   border-radius: var(--radius-lg);
   overflow: hidden;
+
+  &:last-of-type {
+    @media (--phone) {
+      margin-bottom: var(--spacing-lg);
+    }
+  }
 }
 
 .content {
@@ -11,7 +20,7 @@
   gap: var(--spacing-lg);
   padding: var(--local-padding);
   
-  @media (width > 600px) {
+  @media (--ipad) {
     --local-padding: var(--padding);
   }
   
@@ -53,7 +62,7 @@
   width: 100%;
   height: auto;
 
-  @media (width > 600px) {
+  @media (--ipad) {
     --local-display: block;
   }
 }
