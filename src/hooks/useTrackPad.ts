@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { RefObject, useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function useTrackPad() {
     const [isTrackPad, setIsTrackPad] = useState(false)
@@ -8,18 +8,16 @@ export function useTrackPad() {
     useEffect(() => {
         let timesEventFired = 0
 
-        function handler(e) {
+        function handleWheel(e) {
             if (localStorage.getItem('trackPad') !== null) return
-            let root = document.documentElement
 
             timesEventFired++
 
             if (timesEventFired > 50) {
-                root.style.setProperty('--scroll-type', 'proximity')
                 setIsTrackPad(true)
                 localStorage.setItem('trackPad', 'true')
             } else {
-                root.style.setProperty('--scroll-type', 'mandatory')
+                setIsTrackPad(false)
             }
 
             setTimeout(() => {
@@ -27,10 +25,9 @@ export function useTrackPad() {
             }, 3000)
         }
 
-        document.addEventListener('wheel', handler, false)
+        document.addEventListener('wheel', handleWheel, false)
 
-        return () => document.removeEventListener('wheel', handler, false)
-
+        return () => document.removeEventListener('wheel', handleWheel, false)
     }, [])
 
     return isTrackPad;

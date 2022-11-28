@@ -11,6 +11,7 @@ import { useOnScreen } from '@hooks/useOnScreen'
 import { useRef } from 'react'
 
 type Props = {
+  full: boolean
   image: string | null | undefined
   page: {
     title: string
@@ -42,7 +43,7 @@ const contentTiming = {
   fill: 'both'
 }
 
-const Panel = ({ image, page }: Props) => {
+const Panel = ({ full, image, page }: Props) => {
   const { link, excerpt, title, id, direction } = page
   const sectionRef = useRef<HTMLElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
@@ -84,7 +85,7 @@ const Panel = ({ image, page }: Props) => {
       ref={sectionRef}
     >
       <GridWrap>
-        <Grid vars={varsGrid}>
+        <Grid vars={full ? varsGrid : undefined}>
           <>
             <div ref={contentRef} className={stylesContent.content}>
               <h3>{title}</h3>

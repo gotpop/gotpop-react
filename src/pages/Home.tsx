@@ -27,6 +27,16 @@ export function Home() {
   const isTrackPad = useTrackPad()
 
   useEffect(() => {
+    let root = document.documentElement
+
+    if (isTrackPad) {
+      root.style.setProperty('--scroll-type', 'proximity')
+    } else {
+      root.style.setProperty('--scroll-type', 'mandatory')
+    }
+  }, [isTrackPad])
+
+  useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
@@ -36,7 +46,7 @@ export function Home() {
         <Hero />
         <div>
           {pages.map((page: IPage, i) => (
-            <Panel key={i} image={getImage(imagesMap, page.id)} page={page} />
+            <Panel key={i} full={!isTrackPad} image={getImage(imagesMap, page.id)} page={page} />
           ))}
         </div>
       </>
