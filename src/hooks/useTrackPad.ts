@@ -15,7 +15,7 @@ export function useTrackPad() {
 
             timesEventFired++
 
-            if (timesEventFired > 30) {
+            if (timesEventFired > 50) {
                 setIsTrackPad(true)
                 localStorage.setItem('trackPad', 'true')
             } else {
