@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import Hero from '@components/ui/Hero'
 import { IPage } from '@types'
 import LayoutFull from '@components/layouts/LayoutFull'
@@ -8,7 +10,6 @@ import htmlPic from '@images/html.png'
 import keyboardPic from '@images/keyboard.png'
 import macPic from '@images/mac.png'
 import { pages } from '@data/pages'
-import { useEffect } from 'react'
 import { useTrackPad } from '@hooks/useTrackPad'
 
 const imagesMap = new Map([
@@ -25,9 +26,13 @@ const trackPadActive = () => {
 
 export function Home() {
   const isTrackPad = useTrackPad()
+  const [trackPadTrigger, setTrackPadTrigger] = useState(false)
 
   useEffect(() => {
-    if (isTrackPad) trackPadActive()
+    if (isTrackPad) {
+      setTrackPadTrigger(true)
+      trackPadActive()
+    }
   }, [isTrackPad])
 
   useEffect(() => {
@@ -42,7 +47,7 @@ export function Home() {
           {pages.map((page: IPage, i) => (
             <Panel
               key={i}
-              compact={isTrackPad}
+              compact={trackPadTrigger}
               image={getImage(imagesMap, page.id)}
               page={page}
             />
