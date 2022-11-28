@@ -16,6 +16,8 @@
   padding: calc(var(--padding-btn) / 2);
   transition: background-color var(--timing) ease;
   position: var(--local-position);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   @media (--ipad) {
     --local-display: none;
