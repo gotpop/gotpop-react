@@ -9,15 +9,18 @@ export function useTrackPad() {
         let timesEventFired = 0
 
         function handleWheel(e) {
-            if (localStorage.getItem('trackPad') !== null) return
+            const storage = localStorage.getItem('trackPad')
+            
+            if (storage !== null) return
 
             timesEventFired++
 
-            if (timesEventFired > 50) {
+            if (timesEventFired > 30) {
                 setIsTrackPad(true)
                 localStorage.setItem('trackPad', 'true')
             } else {
                 setIsTrackPad(false)
+                localStorage.setItem('trackPad', 'false')
             }
 
             setTimeout(() => {
