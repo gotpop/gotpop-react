@@ -4,7 +4,6 @@
 
   background-color: var(--local-bg-colour);
   direction: var(--local-direction);
-  min-height: 100vh;
   scroll-snap-stop: always;
   scroll-snap-align: center;
 
@@ -25,7 +24,7 @@
   @media (width > 600px) {
     --local-grid-column: 4 / 13;
 
-    margin: 3rem 0 0 0;
+    margin: 3rem 0 3rem 0;
     grid-row: 1;
   }
 }
