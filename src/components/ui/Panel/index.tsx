@@ -1,17 +1,17 @@
-import { CSSProperties, useEffect } from 'react'
+import { CSSProperties, useEffect, useRef } from 'react'
 
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import Grid from '../Grid'
 import GridWrap from '../GridWrap'
 import LinkIcon from '@ui/LinkIcon'
 import macPic from '@images/mac.png'
+import { panelAnimations } from './Panel.animation'
 import styles from './Panel.module.css'
 import stylesContent from './PanelContent.module.css'
 import { useOnScreen } from '@hooks/useOnScreen'
-import { useRef } from 'react'
 
 type Props = {
-  full: boolean
+  compact: boolean
   image: string | null | undefined
   page: {
     title: string
@@ -25,26 +25,9 @@ type Props = {
   }
 }
 
-const contentIn = {
-  transform: ['translatex(-20%)', 'translatex(0%)'],
-  opacity: [0, 1],
-  easing: 'ease-out'
-}
-
-const animateImage = {
-  transform: ['translatex(20%)', 'translatex(0%)'],
-  opacity: [0, 1],
-  easing: 'ease-out'
-}
-
-const contentTiming = {
-  duration: 400,
-  delay: 200,
-  fill: 'both'
-}
-
-const Panel = ({ full, image, page }: Props) => {
+const Panel = ({ compact, image, page }: Props) => {
   const { link, excerpt, title, id, direction } = page
+
   const sectionRef = useRef<HTMLElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
   const imageRef = useRef<HTMLImageElement>(null)
@@ -54,27 +37,7 @@ const Panel = ({ full, image, page }: Props) => {
   const varsGrid = { ['--local-min-height']: '100vh' } as CSSProperties
 
   useEffect(() => {
-    const contentVar = contentRef.current
-    const content = contentVar?.animate(
-      contentIn,
-      contentTiming as KeyframeAnimationOptions
-    )
-    content?.pause()
-
-    const imageVar = imageRef.current
-    const image = imageVar?.animate(
-      animateImage,
-      contentTiming as KeyframeAnimationOptions
-    )
-    image?.pause()
-
-    if (isOnScreen) {
-      content?.play()
-      image?.play()
-    } else {
-      content?.reverse()
-      image?.reverse()
-    }
+    panelAnimations(contentRef.current, imageRef.current, isOnScreen)
   }, [isOnScreen])
 
   return (
@@ -85,7 +48,7 @@ const Panel = ({ full, image, page }: Props) => {
       ref={sectionRef}
     >
       <GridWrap>
-        <Grid vars={full ? varsGrid : undefined}>
+        <Grid vars={!compact ? varsGrid : undefined}>
           <>
             <div ref={contentRef} className={stylesContent.content}>
               <h3>{title}</h3>

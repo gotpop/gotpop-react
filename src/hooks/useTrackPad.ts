@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { useEffect, useState } from 'react'
 
 export function useTrackPad() {
@@ -8,24 +6,11 @@ export function useTrackPad() {
     useEffect(() => {
         let timesEventFired = 0
 
-        function handleWheel(e) {
-            const storage = localStorage.getItem('trackPad')
-            
-            // if (storage !== null) return
-
+        function handleWheel() {
             timesEventFired++
+            timesEventFired > 50 ? setIsTrackPad(true) : setIsTrackPad(false)
 
-            if (timesEventFired > 50) {
-                setIsTrackPad(true)
-                localStorage.setItem('trackPad', 'true')
-            } else {
-                setIsTrackPad(false)
-                localStorage.setItem('trackPad', 'false')
-            }
-
-            setTimeout(() => {
-                timesEventFired = 0
-            }, 3000)
+            setTimeout(() => { timesEventFired = 0 }, 3000)
         }
 
         document.addEventListener('wheel', handleWheel, false)
