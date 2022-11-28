@@ -11,11 +11,6 @@ import { pages } from '@data/pages'
 import { useEffect } from 'react'
 import { useTrackPad } from '@hooks/useTrackPad'
 
-const content = {
-  title: 'About',
-  text: 'Find out more about us here.'
-}
-
 const imagesMap = new Map([
   [1, booksPic],
   [2, htmlPic],
@@ -23,15 +18,16 @@ const imagesMap = new Map([
   [4, macPic]
 ])
 
+const trackPadActive = () => {
+  localStorage.setItem('trackPad', 'true')
+  document.documentElement.style.setProperty('--scroll-type', 'proximity')
+}
+
 export function Home() {
   const isTrackPad = useTrackPad()
 
   useEffect(() => {
-    let root = document.documentElement
-
-    if (isTrackPad) {
-      root.style.setProperty('--scroll-type', 'proximity')
-    }
+    if (isTrackPad) trackPadActive()
   }, [isTrackPad])
 
   useEffect(() => {
@@ -44,7 +40,12 @@ export function Home() {
         <Hero />
         <div>
           {pages.map((page: IPage, i) => (
-            <Panel key={i} full={!isTrackPad} image={getImage(imagesMap, page.id)} page={page} />
+            <Panel
+              key={i}
+              compact={isTrackPad}
+              image={getImage(imagesMap, page.id)}
+              page={page}
+            />
           ))}
         </div>
       </>
