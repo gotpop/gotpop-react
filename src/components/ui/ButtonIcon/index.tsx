@@ -21,6 +21,7 @@ const ButtonIcon = ({
 
   return (
     <button
+      data-testid="button"
       className={styles.button}
       onClick={handleClick}
       style={vars}
