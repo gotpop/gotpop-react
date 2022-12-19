@@ -1,10 +1,11 @@
+import { Key, useEffect } from 'react'
+
 import Intro from '@components/ui/Intro'
 import LayoutStandard from '@components/layouts/LayoutStandard'
 import Product from '@components/ui/Product'
-import { shopItems } from '../data/shop'
-import { useEffect } from 'react'
+import useFetch from '@hooks/useFetch'
 
-type Item = {
+type ProductType = {
   name: string
   id: number
   url: string
@@ -16,18 +17,25 @@ const content = {
   text: 'Buy your developer accessories here.'
 }
 
+const URL = 'https://gotpop-api.vercel.app/api'
+
+type returnedData = {
+  loading: boolean
+  error: boolean | undefined
+  value: ProductType[]
+}
+
 export function Shop() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-  
+  const { loading, error, value: shopItems }: returnedData = useFetch(URL)
+
   return (
     <LayoutStandard>
       <>
         <Intro content={content} />
-        {shopItems.map((product: Item, key) => (
-          <Product key={key} product={product} />
+        {shopItems && shopItems.map((product: ProductType, key: number) => (
+          <Product product={product} key={key} />
         ))}
+        {loading ? <>Loading...</> : error ? <>Error...</> : null}
       </>
     </LayoutStandard>
   )
