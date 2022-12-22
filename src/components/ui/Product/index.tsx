@@ -35,13 +35,13 @@ const Product = ({ product }: Props) => {
 
   return (
     <section className={styles.product}>
-      <img className={styles.image} src={url} alt="Product" />
+      {/* <img className={styles.image} src={url} alt="Product" /> */}
       <div className={styles.content}>
         <section className={styles.intro}>
           <h3>{name}</h3>
-          <span className={styles.price}>{formatCurrency(price)}</span>
+          {/* <span className={styles.price}>{formatCurrency(price)}</span> */}
         </section>
-        {quantity === 0 ? (
+        {/* {quantity === 0 ? (
           <ButtonIcon
             handleClick={() => increaseCartQuantity(id)}
             text="Add to cart"
@@ -58,7 +58,7 @@ const Product = ({ product }: Props) => {
             />
             <ButtonIcon icon={<AiFillPlusCircle />} handleClick={() => increaseCartQuantity(id)} />
           </div>
-        )}
+        )} */}
       </div>
     </section>
   )
