@@ -4,7 +4,7 @@ export const posts = [
     {
         userId: 1,
         id: 1,
-        title: 'liam first post title',
+        title: 'rich first post title',
         body: 'first post body',
     },
     {
@@ -24,9 +24,9 @@ export const posts = [
 
 export const posts2 = [
     { id: 1, name: "HTML & JS22", price: 10.99, url: "/books.png" },
-    // { id: 2, name: "Stunning CSS", price: 19.99, url: "/html.png" },
-    // { id: 3, name: "Keyboard", price: 120, url: "/keyboard.png" },
-    // { id: 4, name: "MacBook Pro", price: 1200, url: "/mac.png" }
+    { id: 2, name: "Stunning CSS", price: 19.99, url: "/html.png" },
+    { id: 3, name: "Keyboard", price: 120, url: "/keyboard.png" },
+    { id: 4, name: "MacBook Pro", price: 1200, url: "/mac.png" }
 ]
 
 export const handlers = [

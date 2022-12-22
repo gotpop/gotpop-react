@@ -35,7 +35,7 @@ function Liam() {
       {posts.length > 0 && posts.map(post => (
         <article key={post.id}>
           <h2>{post.title}</h2>
-          {/* <p>{post.body}</p> */}
+          <p>{post.body}</p>
         </article>
       ))}
       
