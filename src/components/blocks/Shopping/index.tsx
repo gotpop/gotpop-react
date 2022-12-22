@@ -26,6 +26,7 @@ const Shopping = ({ url }: props) => {
 
   return (
     <>
+      {shopItems && <h4 data-testid="liamz">Liam</h4>}
       {shopItems &&
         shopItems.map((product: ProductType, key: number) => (
           <Product product={product} key={key} data-testid="liam" />

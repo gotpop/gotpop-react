@@ -1,21 +1,4 @@
-// import { expect, it } from 'vitest'
-// import {
-//   fireEvent,
-//   prettyDOM,
-//   render,
-//   screen,
-//   waitFor,
-//   waitForElementToBeRemoved
-// } from '@testing-library/react'
-
-// import Liam from './Liam'
-// import {logRoles} from '@testing-library/dom'
-// import { posts } from '../mocks/handlers'
-// import userEvent from '@testing-library/user-event'
-
 import { expect, it } from 'vitest'
-// import { ApolloProvider } from '@apollo/client'
-// import { client } from './ApolloClient'
 import {
   render,
   screen,
@@ -25,12 +8,7 @@ import {
 } from '../utils/test-utils'
 
 import Liam from './Liam'
-// import App from './App'
 import { posts } from '../mocks/handlers'
-
-// import { posts } from './mocks/handlers'
-
-// import { userEvent } from '../utils/test-utils'
 
 it('Should return posts when clicking fetch button', async () => {
   render(<Liam />)
