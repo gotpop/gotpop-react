@@ -24,12 +24,10 @@ it('loads and displays greeting', async () => {
   )
 
   await waitFor(() => {
-    const element = screen.queryByTestId('liamz')
+    const element = screen.queryByTestId('product')
     expect(element).toBeDefined()
   })
     
-  // expect(screen.queryByText('HTML & JS22')).toBeDefined()
-
   expect(
     screen.getByRole('heading', { name: 'Liam is the best', level: 3 })
   ).toBeDefined()

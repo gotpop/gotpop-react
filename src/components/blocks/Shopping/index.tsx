@@ -26,12 +26,17 @@ const Shopping = ({ url }: props) => {
 
   return (
     <>
-      {shopItems && <h4 data-testid="liamz">Liam</h4>}
+      {loading ? (
+        <span data-testid="loading-span" aria-label="loading">
+          Loading...
+        </span>
+      ) : error ? (
+        <>Error...</>
+      ) : null}
       {shopItems &&
         shopItems.map((product: ProductType, key: number) => (
-          <Product product={product} key={key} data-testid="liam" />
+          <Product product={product} key={key} data-testid="product" />
         ))}
-      {loading ? <>Loading...</> : error ? <>Error...</> : null}
     </>
   )
 }
