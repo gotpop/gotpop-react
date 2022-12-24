@@ -10,7 +10,7 @@ import {
 import { MenuProvider } from '@context/MenuContext'
 import Shop from './index'
 import { ShoppingCartProvider } from '@context/ShoppingCartContext'
-import { posts } from '../../../mocks/handlers'
+import { products } from '../../../mocks/handlers'
 
 const URL = 'https://gotpop-simple-server.up.railway.app'
 
@@ -29,15 +29,14 @@ it('loads and displays greeting', async () => {
   })
     
   expect(
-    screen.getByRole('heading', { name: 'Liam is the best', level: 3 })
+    screen.getByRole('heading', { name: 'Html & CSS', level: 3 })
   ).toBeDefined()
 
-  // await waitFor(() => {
-  //   // expect(screen.getByText()).toBeTruthy()
-  //   // screen.debug()
-  //   // posts.forEach((post) => {
-  //   //   // expect(screen.getByRole('heading', { name: post.title, level: 2 })).toBeDefined()
-  //   //   expect(screen.getByText(post.name)).toBeDefined()
-  //   // })
-  // })
+  await waitFor(() => {
+    products.forEach((product) => {
+      expect(
+        screen.getByRole('heading', { name: product.name, level: 3 })
+      ).toBeDefined()
+    })
+  })
 })
