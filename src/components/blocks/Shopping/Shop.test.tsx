@@ -19,10 +19,6 @@ describe('Shopping area', () => {
       expect(element).toBeDefined()
     })
 
-    expect(
-      screen.getByRole('heading', { name: 'Html & CSS', level: 3 })
-    ).toBeDefined()
-
     await waitFor(() => {
       products.forEach(product => {
         expect(
