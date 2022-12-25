@@ -1,12 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import {
-  render,
-  screen,
-  waitFor,
-} from '../../../utils/test-utils'
+import { render, screen, waitFor } from '@utilities/test-utils'
 
 import Shop from './index'
-import { products } from '../../../mocks/handlers'
+import { products } from '@mocks/handlers'
 
 const URL = 'https://gotpop-simple-server.up.railway.app'
 

@@ -30,6 +30,7 @@
       "@layouts/*": ["./components/layouts/*"],
       "@types": ["./types/index"],
       "@ui/*": ["./components/ui/*"],
+      "@mocks/*": ["./mocks/*"],
       "@utilities/*": ["./utilities/*"]
     }
   },
