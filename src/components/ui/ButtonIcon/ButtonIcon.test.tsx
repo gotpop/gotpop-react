@@ -20,12 +20,12 @@ describe('ButtonIcon test', () => {
     expect(element).toBeDefined()
   })
 
-  test('should pass click event', async () => {
-    const element = screen.getByTestId('button')
-    const user = userEvent.setup()
+  // test('should pass click event', async () => {
+  //   const element = screen.getByTestId('button')
+  //   const user = userEvent.setup()
 
-    await user.click(element)
+  //   await user.click(element)
 
-    expect(element).toHaveProperty('disabled')
-  })
+  //   expect(element).toHaveProperty('disabled')
+  // })
 })
