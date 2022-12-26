@@ -18,6 +18,7 @@ const buttonRemoveVars = {
 
 export function CartItem({ id, quantity }: CartItemProps) {
   const { removeFromCart } = useShoppingCart()
+  
   const item = shopItems.find(i => i.id === id)
   if (item == null) return null
 
