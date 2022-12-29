@@ -18,7 +18,7 @@ export function Drawer({ children, isOpen }: props) {
   return (
     <>
       {isOpen && <div className={styles.wrap}></div>}
-      <div className={styles.drawer} style={drawerState(isOpen)}>
+      <div className={styles.drawer} style={drawerState(isOpen)} data-testid="drawer">
         {children}
       </div>
     </>

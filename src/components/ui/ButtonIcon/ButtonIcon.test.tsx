@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
 
 import ButtonIcon from '@ui/ButtonIcon'
@@ -14,18 +14,18 @@ describe('ButtonIcon test', () => {
     render(<ButtonIcon text="Button" handleClick={handleClick} />)
   })
 
-  test('should render', () => {
+  it('should render', () => {
     const element = screen.getByTestId('button')
 
     expect(element).toBeDefined()
   })
 
-  // test('should pass click event', async () => {
-  //   const element = screen.getByTestId('button')
-  //   const user = userEvent.setup()
+  it('should pass click event', async () => {
+    const element = screen.getByTestId('button')
 
-  //   await user.click(element)
+    userEvent.click(element)
 
-  //   expect(element).toHaveProperty('disabled')
-  // })
+    expect(element).toHaveProperty('disabled')
+    // expect(element).toBeDisabled()
+  })
 })
